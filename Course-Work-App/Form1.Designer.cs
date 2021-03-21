@@ -58,9 +58,9 @@ namespace Course_Work_App
             this.groupBox1.Controls.Add(this.Rooms);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(17, 47);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(380, 464);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -71,7 +71,7 @@ namespace Course_Work_App
             this.JobPositions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.JobPositions.Location = new System.Drawing.Point(8, 375);
-            this.JobPositions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.JobPositions.Margin = new System.Windows.Forms.Padding(4);
             this.JobPositions.Name = "JobPositions";
             this.JobPositions.Size = new System.Drawing.Size(363, 54);
             this.JobPositions.TabIndex = 4;
@@ -84,7 +84,7 @@ namespace Course_Work_App
             this.Workers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Workers.Location = new System.Drawing.Point(8, 300);
-            this.Workers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Workers.Margin = new System.Windows.Forms.Padding(4);
             this.Workers.Name = "Workers";
             this.Workers.Size = new System.Drawing.Size(363, 54);
             this.Workers.TabIndex = 3;
@@ -97,11 +97,11 @@ namespace Course_Work_App
             this.Accounting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Accounting.Location = new System.Drawing.Point(8, 225);
-            this.Accounting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Accounting.Margin = new System.Windows.Forms.Padding(4);
             this.Accounting.Name = "Accounting";
             this.Accounting.Size = new System.Drawing.Size(363, 54);
             this.Accounting.TabIndex = 2;
-            this.Accounting.Text = "Операции";
+            this.Accounting.Text = "Список операций";
             this.Accounting.UseVisualStyleBackColor = true;
             this.Accounting.Click += new System.EventHandler(this.Accounting_Click);
             // 
@@ -110,7 +110,7 @@ namespace Course_Work_App
             this.Clients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Clients.Location = new System.Drawing.Point(8, 150);
-            this.Clients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Clients.Margin = new System.Windows.Forms.Padding(4);
             this.Clients.Name = "Clients";
             this.Clients.Size = new System.Drawing.Size(363, 54);
             this.Clients.TabIndex = 1;
@@ -123,7 +123,7 @@ namespace Course_Work_App
             this.Rooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Rooms.Location = new System.Drawing.Point(8, 75);
-            this.Rooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Rooms.Margin = new System.Windows.Forms.Padding(4);
             this.Rooms.Name = "Rooms";
             this.Rooms.Size = new System.Drawing.Size(363, 54);
             this.Rooms.TabIndex = 0;
@@ -155,7 +155,7 @@ namespace Course_Work_App
             this.авторизацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ChangeUser});
             this.авторизацияToolStripMenuItem.Name = "авторизацияToolStripMenuItem";
-            this.авторизацияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.авторизацияToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.авторизацияToolStripMenuItem.Text = "Авторизация";
             // 
             // ChangeUser
@@ -175,7 +175,7 @@ namespace Course_Work_App
             // AboutProgram
             // 
             this.AboutProgram.Name = "AboutProgram";
-            this.AboutProgram.Size = new System.Drawing.Size(180, 22);
+            this.AboutProgram.Size = new System.Drawing.Size(158, 22);
             this.AboutProgram.Text = "О программе";
             // 
             // pictureBox1
@@ -203,7 +203,7 @@ namespace Course_Work_App
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

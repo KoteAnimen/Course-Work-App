@@ -29,10 +29,25 @@ namespace Course_Work_App
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.операцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeInfRoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
+            this.номераDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -49,30 +64,126 @@ namespace Course_Work_App
             // операцииToolStripMenuItem
             // 
             this.операцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьToolStripMenuItem});
+            this.ChangeInfRoom});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
             this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
-            // добавитьToolStripMenuItem
+            // ChangeInfRoom
             // 
-            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.добавитьToolStripMenuItem.Text = "Изменить";
+            this.ChangeInfRoom.Name = "ChangeInfRoom";
+            this.ChangeInfRoom.Size = new System.Drawing.Size(280, 22);
+            this.ChangeInfRoom.Text = "Изменить информацию о номере";
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // номераBindingSource
+            // 
+            this.номераBindingSource.DataMember = "Номера";
+            this.номераBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // номераTableAdapter
+            // 
+            this.номераTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ДолжностиTableAdapter = null;
+            this.tableAdapterManager.КлиентыTableAdapter = null;
+            this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
+            this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.УчетРаботыTableAdapter = null;
+            // 
+            // номераDataGridView
+            // 
+            this.номераDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.номераDataGridView.AutoGenerateColumns = false;
+            this.номераDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.номераDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.номераDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewTextBoxColumn5});
+            this.номераDataGridView.DataSource = this.номераBindingSource;
+            this.номераDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.номераDataGridView.Name = "номераDataGridView";
+            this.номераDataGridView.ReadOnly = true;
+            this.номераDataGridView.Size = new System.Drawing.Size(915, 481);
+            this.номераDataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
+            this.dataGridViewTextBoxColumn1.HeaderText = "КодНомера";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
+            this.dataGridViewTextBoxColumn3.HeaderText = "СуточнаяСтоимость";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
+            this.dataGridViewTextBoxColumn4.HeaderText = "КоличествоМест";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "СостояниеОплаты";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
+            this.dataGridViewTextBoxColumn5.HeaderText = "КодСотрудника";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 521);
+            this.Controls.Add(this.номераDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Rooms";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Номера";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Rooms_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,6 +193,17 @@ namespace Course_Work_App
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem операцииToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ChangeInfRoom;
+        private HotelDataSet hotelDataSet;
+        private System.Windows.Forms.BindingSource номераBindingSource;
+        private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
+        private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView номераDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }

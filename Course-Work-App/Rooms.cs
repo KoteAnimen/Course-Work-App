@@ -16,5 +16,20 @@ namespace Course_Work_App
         {
             InitializeComponent();
         }
+
+        private void номераBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.номераBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hotelDataSet);
+
+        }
+
+        private void Rooms_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Номера". При необходимости она может быть перемещена или удалена.
+            this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
+
+        }
     }
 }

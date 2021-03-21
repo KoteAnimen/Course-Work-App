@@ -16,5 +16,20 @@ namespace Course_Work_App
         {
             InitializeComponent();
         }
+
+        private void учетРаботыBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.учетРаботыBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hotelDataSet);
+
+        }
+
+        private void Accounting_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.УчетРаботы". При необходимости она может быть перемещена или удалена.
+            this.учетРаботыTableAdapter.Fill(this.hotelDataSet.УчетРаботы);
+
+        }
     }
 }
