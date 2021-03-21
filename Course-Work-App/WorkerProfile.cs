@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Course_Work_App
 {
-    public partial class Workers : Form
+    public partial class WorkerProfile : Form
     {
-        public Workers()
+        public WorkerProfile()
         {
             InitializeComponent();
         }
@@ -25,17 +25,11 @@ namespace Course_Work_App
 
         }
 
-        private void Workers_Load(object sender, EventArgs e)
+        private void WorkerProfile_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Персонал". При необходимости она может быть перемещена или удалена.
             this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
 
-        }
-
-        private void AddNewWorker_Click(object sender, EventArgs e)
-        {
-            WorkerProfile profile = new WorkerProfile();
-            profile.ShowDialog();
         }
     }
 }
