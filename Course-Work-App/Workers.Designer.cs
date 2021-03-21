@@ -92,6 +92,7 @@ namespace Course_Work_App
             this.ChangeInfWorker.Name = "ChangeInfWorker";
             this.ChangeInfWorker.Size = new System.Drawing.Size(353, 22);
             this.ChangeInfWorker.Text = "Изменить информацию о сотруднике";
+            this.ChangeInfWorker.Click += new System.EventHandler(this.ChangeInfWorker_Click);
             // 
             // DismissWorker
             // 

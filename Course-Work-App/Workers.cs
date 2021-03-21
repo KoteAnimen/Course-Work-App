@@ -37,5 +37,11 @@ namespace Course_Work_App
             WorkerProfile profile = new WorkerProfile();
             profile.ShowDialog();
         }
+
+        private void ChangeInfWorker_Click(object sender, EventArgs e)
+        {
+            ChangeWorkerProfile profile = new ChangeWorkerProfile();
+            profile.ShowDialog();
+        }
     }
 }
