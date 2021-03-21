@@ -29,10 +29,22 @@ namespace Course_Work_App
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.операцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.изменитьИнформациюОДолжностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeInfJobPosition = new System.Windows.Forms.ToolStripMenuItem();
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.должностиTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ДолжностиTableAdapter();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
+            this.должностиDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -48,30 +60,104 @@ namespace Course_Work_App
             // операцииToolStripMenuItem
             // 
             this.операцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.изменитьИнформациюОДолжностиToolStripMenuItem});
+            this.ChangeInfJobPosition});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
             this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
-            // изменитьИнформациюОДолжностиToolStripMenuItem
+            // ChangeInfJobPosition
             // 
-            this.изменитьИнформациюОДолжностиToolStripMenuItem.Name = "изменитьИнформациюОДолжностиToolStripMenuItem";
-            this.изменитьИнформациюОДолжностиToolStripMenuItem.Size = new System.Drawing.Size(298, 22);
-            this.изменитьИнформациюОДолжностиToolStripMenuItem.Text = "Изменить информацию о должности";
+            this.ChangeInfJobPosition.Name = "ChangeInfJobPosition";
+            this.ChangeInfJobPosition.Size = new System.Drawing.Size(298, 22);
+            this.ChangeInfJobPosition.Text = "Изменить информацию о должности";
+            this.ChangeInfJobPosition.Click += new System.EventHandler(this.ChangeInfJobPosition_Click);
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // должностиBindingSource
+            // 
+            this.должностиBindingSource.DataMember = "Должности";
+            this.должностиBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // должностиTableAdapter
+            // 
+            this.должностиTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.ДолжностиTableAdapter = this.должностиTableAdapter;
+            this.tableAdapterManager.КлиентыTableAdapter = null;
+            this.tableAdapterManager.НомераTableAdapter = null;
+            this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.УчетРаботыTableAdapter = null;
+            // 
+            // должностиDataGridView
+            // 
+            this.должностиDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.должностиDataGridView.AutoGenerateColumns = false;
+            this.должностиDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.должностиDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.должностиDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.должностиDataGridView.DataSource = this.должностиBindingSource;
+            this.должностиDataGridView.Location = new System.Drawing.Point(12, 28);
+            this.должностиDataGridView.MultiSelect = false;
+            this.должностиDataGridView.Name = "должностиDataGridView";
+            this.должностиDataGridView.ReadOnly = true;
+            this.должностиDataGridView.Size = new System.Drawing.Size(947, 475);
+            this.должностиDataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодДолжности";
+            this.dataGridViewTextBoxColumn1.HeaderText = "КодДолжности";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Название";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Зарплата";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Зарплата";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // JobPositions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 515);
+            this.Controls.Add(this.должностиDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "JobPositions";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Должности";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.JobPositions_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +167,14 @@ namespace Course_Work_App
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem операцииToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem изменитьИнформациюОДолжностиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ChangeInfJobPosition;
+        private HotelDataSet hotelDataSet;
+        private System.Windows.Forms.BindingSource должностиBindingSource;
+        private HotelDataSetTableAdapters.ДолжностиTableAdapter должностиTableAdapter;
+        private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView должностиDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

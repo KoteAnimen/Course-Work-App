@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Course_Work_App
 {
-    public partial class JobPositions : Form
+    public partial class ChangeInfJobPosition : Form
     {
-        public JobPositions()
+        public ChangeInfJobPosition()
         {
             InitializeComponent();
         }
@@ -25,17 +25,11 @@ namespace Course_Work_App
 
         }
 
-        private void JobPositions_Load(object sender, EventArgs e)
+        private void ChangeInfJobPosition_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Должности". При необходимости она может быть перемещена или удалена.
             this.должностиTableAdapter.Fill(this.hotelDataSet.Должности);
 
-        }
-
-        private void ChangeInfJobPosition_Click(object sender, EventArgs e)
-        {
-            ChangeInfJobPosition change = new ChangeInfJobPosition();
-            change.ShowDialog();
         }
     }
 }
