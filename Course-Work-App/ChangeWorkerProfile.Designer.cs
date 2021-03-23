@@ -37,12 +37,11 @@ namespace Course_Work_App
             System.Windows.Forms.Label серияНомерПаспортаLabel;
             System.Windows.Forms.Label адресLabel;
             System.Windows.Forms.Label датаРожденияLabel;
-            System.Windows.Forms.Label телефонLabel;
             System.Windows.Forms.Label началоРабДняLabel;
             System.Windows.Forms.Label конецРабДняLabel;
             System.Windows.Forms.Label должностьLabel;
+            System.Windows.Forms.Label телефонLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.телефонTextBox = new System.Windows.Forms.TextBox();
             this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Course_Work_App.HotelDataSet();
             this.датаРожденияDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -56,12 +55,13 @@ namespace Course_Work_App
             this.кодСотрудникаTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.должностьComboBox = new System.Windows.Forms.ComboBox();
+            this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.конецРабДняDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.началоРабДняDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ChangeWorker = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
-            this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.должностиTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ДолжностиTableAdapter();
+            this.телефонMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             кодСотрудникаLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
@@ -69,10 +69,10 @@ namespace Course_Work_App
             серияНомерПаспортаLabel = new System.Windows.Forms.Label();
             адресLabel = new System.Windows.Forms.Label();
             датаРожденияLabel = new System.Windows.Forms.Label();
-            телефонLabel = new System.Windows.Forms.Label();
             началоРабДняLabel = new System.Windows.Forms.Label();
             конецРабДняLabel = new System.Windows.Forms.Label();
             должностьLabel = new System.Windows.Forms.Label();
+            телефонLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
@@ -143,15 +143,6 @@ namespace Course_Work_App
             датаРожденияLabel.TabIndex = 12;
             датаРожденияLabel.Text = "Дата Рождения:";
             // 
-            // телефонLabel
-            // 
-            телефонLabel.AutoSize = true;
-            телефонLabel.Location = new System.Drawing.Point(20, 128);
-            телефонLabel.Name = "телефонLabel";
-            телефонLabel.Size = new System.Drawing.Size(72, 17);
-            телефонLabel.TabIndex = 14;
-            телефонLabel.Text = "Телефон:";
-            // 
             // началоРабДняLabel
             // 
             началоРабДняLabel.AutoSize = true;
@@ -182,7 +173,7 @@ namespace Course_Work_App
             // groupBox1
             // 
             this.groupBox1.Controls.Add(телефонLabel);
-            this.groupBox1.Controls.Add(this.телефонTextBox);
+            this.groupBox1.Controls.Add(this.телефонMaskedTextBox);
             this.groupBox1.Controls.Add(датаРожденияLabel);
             this.groupBox1.Controls.Add(this.датаРожденияDateTimePicker);
             this.groupBox1.Controls.Add(адресLabel);
@@ -199,19 +190,10 @@ namespace Course_Work_App
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(693, 169);
+            this.groupBox1.Size = new System.Drawing.Size(702, 183);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Личные данные сотрудника";
-            // 
-            // телефонTextBox
-            // 
-            this.телефонTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Телефон", true));
-            this.телефонTextBox.Location = new System.Drawing.Point(98, 125);
-            this.телефонTextBox.MaxLength = 11;
-            this.телефонTextBox.Name = "телефонTextBox";
-            this.телефонTextBox.Size = new System.Drawing.Size(181, 23);
-            this.телефонTextBox.TabIndex = 15;
             // 
             // персоналBindingSource
             // 
@@ -325,6 +307,11 @@ namespace Course_Work_App
             this.должностьComboBox.Size = new System.Drawing.Size(121, 24);
             this.должностьComboBox.TabIndex = 8;
             // 
+            // должностиBindingSource
+            // 
+            this.должностиBindingSource.DataMember = "Должности";
+            this.должностиBindingSource.DataSource = this.hotelDataSet;
+            // 
             // конецРабДняDateTimePicker
             // 
             this.конецРабДняDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.персоналBindingSource, "КонецРабДня", true));
@@ -368,14 +355,27 @@ namespace Course_Work_App
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
             // 
-            // должностиBindingSource
-            // 
-            this.должностиBindingSource.DataMember = "Должности";
-            this.должностиBindingSource.DataSource = this.hotelDataSet;
-            // 
             // должностиTableAdapter
             // 
             this.должностиTableAdapter.ClearBeforeFill = true;
+            // 
+            // телефонLabel
+            // 
+            телефонLabel.AutoSize = true;
+            телефонLabel.Location = new System.Drawing.Point(21, 127);
+            телефонLabel.Name = "телефонLabel";
+            телефонLabel.Size = new System.Drawing.Size(72, 17);
+            телефонLabel.TabIndex = 13;
+            телефонLabel.Text = "Телефон:";
+            // 
+            // телефонMaskedTextBox
+            // 
+            this.телефонMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Телефон", true));
+            this.телефонMaskedTextBox.Location = new System.Drawing.Point(99, 124);
+            this.телефонMaskedTextBox.Mask = "0\\-000\\-000\\-00\\-00";
+            this.телефонMaskedTextBox.Name = "телефонMaskedTextBox";
+            this.телефонMaskedTextBox.Size = new System.Drawing.Size(180, 23);
+            this.телефонMaskedTextBox.TabIndex = 14;
             // 
             // ChangeWorkerProfile
             // 
@@ -414,7 +414,6 @@ namespace Course_Work_App
         private System.Windows.Forms.BindingSource персоналBindingSource;
         private HotelDataSetTableAdapters.ПерсоналTableAdapter персоналTableAdapter;
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.TextBox телефонTextBox;
         private System.Windows.Forms.DateTimePicker датаРожденияDateTimePicker;
         private System.Windows.Forms.TextBox адресTextBox;
         private System.Windows.Forms.TextBox серияНомерПаспортаTextBox;
@@ -430,5 +429,6 @@ namespace Course_Work_App
         private System.Windows.Forms.ComboBox должностьComboBox;
         private System.Windows.Forms.BindingSource должностиBindingSource;
         private HotelDataSetTableAdapters.ДолжностиTableAdapter должностиTableAdapter;
+        private System.Windows.Forms.MaskedTextBox телефонMaskedTextBox;
     }
 }

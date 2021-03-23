@@ -83,6 +83,7 @@ namespace Course_Work_App
             this.AddNewClient.Name = "AddNewClient";
             this.AddNewClient.Size = new System.Drawing.Size(264, 22);
             this.AddNewClient.Text = "Новый клиент";
+            this.AddNewClient.Click += new System.EventHandler(this.AddNewClient_Click);
             // 
             // ChangeInfClient
             // 
@@ -158,60 +159,70 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
             this.dataGridViewTextBoxColumn1.HeaderText = "КодОперации";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
             this.dataGridViewTextBoxColumn2.HeaderText = "КодНомера";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Состояние";
             this.dataGridViewTextBoxColumn3.HeaderText = "Состояние";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
             this.dataGridViewCheckBoxColumn1.HeaderText = "СостояниеОплаты";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Фамилия";
             this.dataGridViewTextBoxColumn4.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Имя";
             this.dataGridViewTextBoxColumn5.HeaderText = "Имя";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Отчество";
             this.dataGridViewTextBoxColumn6.HeaderText = "Отчество";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ДатаЗаселения";
             this.dataGridViewTextBoxColumn7.HeaderText = "ДатаЗаселения";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "ДатаВыселения";
             this.dataGridViewTextBoxColumn8.HeaderText = "ДатаВыселения";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "ОбщСтоимостьПроживания";
             this.dataGridViewTextBoxColumn9.HeaderText = "ОбщСтоимостьПроживания";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // Clients
             // 

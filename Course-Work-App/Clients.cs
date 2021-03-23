@@ -23,5 +23,12 @@ namespace Course_Work_App
             this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
 
         }
+
+        private void AddNewClient_Click(object sender, EventArgs e)
+        {
+            ClientProfile profile = new ClientProfile();
+            profile.ShowDialog();
+            this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
+        }
     }
 }

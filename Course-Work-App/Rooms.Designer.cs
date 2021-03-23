@@ -44,6 +44,8 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddRoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
@@ -57,22 +59,24 @@ namespace Course_Work_App
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(939, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(939, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // операцииToolStripMenuItem
             // 
             this.операцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ChangeInfRoom});
+            this.AddRoom,
+            this.ChangeInfRoom,
+            this.DeleteRoom});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
-            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
             // ChangeInfRoom
             // 
             this.ChangeInfRoom.Name = "ChangeInfRoom";
-            this.ChangeInfRoom.Size = new System.Drawing.Size(280, 22);
+            this.ChangeInfRoom.Size = new System.Drawing.Size(262, 22);
             this.ChangeInfRoom.Text = "Изменить информацию о номере";
             // 
             // hotelDataSet
@@ -163,6 +167,18 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // AddRoom
+            // 
+            this.AddRoom.Name = "AddRoom";
+            this.AddRoom.Size = new System.Drawing.Size(262, 22);
+            this.AddRoom.Text = "Добавить комнату(номер)";
+            // 
+            // DeleteRoom
+            // 
+            this.DeleteRoom.Name = "DeleteRoom";
+            this.DeleteRoom.Size = new System.Drawing.Size(262, 22);
+            this.DeleteRoom.Text = "Удалить номер";
+            // 
             // Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,5 +221,7 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.ToolStripMenuItem AddRoom;
+        private System.Windows.Forms.ToolStripMenuItem DeleteRoom;
     }
 }
