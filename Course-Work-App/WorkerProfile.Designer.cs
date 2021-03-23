@@ -55,11 +55,13 @@ namespace Course_Work_App
             this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.кодСотрудникаTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.должностьComboBox = new System.Windows.Forms.ComboBox();
             this.конецРабДняDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.началоРабДняDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AddWorker = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
-            this.должностьComboBox = new System.Windows.Forms.ComboBox();
+            this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.должностиTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ДолжностиTableAdapter();
             кодСотрудникаLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
@@ -75,6 +77,7 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // кодСотрудникаLabel
@@ -166,6 +169,15 @@ namespace Course_Work_App
             конецРабДняLabel.Size = new System.Drawing.Size(146, 17);
             конецРабДняLabel.TabIndex = 6;
             конецРабДняLabel.Text = "Конец рабочего дня:";
+            // 
+            // должностьLabel
+            // 
+            должностьLabel.AutoSize = true;
+            должностьLabel.Location = new System.Drawing.Point(33, 74);
+            должностьLabel.Name = "должностьLabel";
+            должностьLabel.Size = new System.Drawing.Size(85, 17);
+            должностьLabel.TabIndex = 7;
+            должностьLabel.Text = "Должность:";
             // 
             // groupBox1
             // 
@@ -301,6 +313,17 @@ namespace Course_Work_App
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Рабочие данные сотрудника";
             // 
+            // должностьComboBox
+            // 
+            this.должностьComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Должность", true));
+            this.должностьComboBox.DataSource = this.должностиBindingSource;
+            this.должностьComboBox.DisplayMember = "Название";
+            this.должностьComboBox.FormattingEnabled = true;
+            this.должностьComboBox.Location = new System.Drawing.Point(124, 71);
+            this.должностьComboBox.Name = "должностьComboBox";
+            this.должностьComboBox.Size = new System.Drawing.Size(121, 24);
+            this.должностьComboBox.TabIndex = 8;
+            // 
             // конецРабДняDateTimePicker
             // 
             this.конецРабДняDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.персоналBindingSource, "КонецРабДня", true));
@@ -344,23 +367,14 @@ namespace Course_Work_App
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
             // 
-            // должностьLabel
+            // должностиBindingSource
             // 
-            должностьLabel.AutoSize = true;
-            должностьLabel.Location = new System.Drawing.Point(33, 74);
-            должностьLabel.Name = "должностьLabel";
-            должностьLabel.Size = new System.Drawing.Size(85, 17);
-            должностьLabel.TabIndex = 7;
-            должностьLabel.Text = "Должность:";
+            this.должностиBindingSource.DataMember = "Должности";
+            this.должностиBindingSource.DataSource = this.hotelDataSet;
             // 
-            // должностьComboBox
+            // должностиTableAdapter
             // 
-            this.должностьComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Должность", true));
-            this.должностьComboBox.FormattingEnabled = true;
-            this.должностьComboBox.Location = new System.Drawing.Point(124, 71);
-            this.должностьComboBox.Name = "должностьComboBox";
-            this.должностьComboBox.Size = new System.Drawing.Size(121, 24);
-            this.должностьComboBox.TabIndex = 8;
+            this.должностиTableAdapter.ClearBeforeFill = true;
             // 
             // WorkerProfile
             // 
@@ -387,6 +401,7 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,5 +427,7 @@ namespace Course_Work_App
         private System.Windows.Forms.Button AddWorker;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.ComboBox должностьComboBox;
+        private System.Windows.Forms.BindingSource должностиBindingSource;
+        private HotelDataSetTableAdapters.ДолжностиTableAdapter должностиTableAdapter;
     }
 }

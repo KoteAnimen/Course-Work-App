@@ -60,6 +60,8 @@ namespace Course_Work_App
             this.началоРабДняDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ChangeWorker = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.должностиTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ДолжностиTableAdapter();
             кодСотрудникаLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
@@ -75,6 +77,7 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // кодСотрудникаLabel
@@ -314,6 +317,8 @@ namespace Course_Work_App
             // должностьComboBox
             // 
             this.должностьComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Должность", true));
+            this.должностьComboBox.DataSource = this.должностиBindingSource;
+            this.должностьComboBox.DisplayMember = "Название";
             this.должностьComboBox.FormattingEnabled = true;
             this.должностьComboBox.Location = new System.Drawing.Point(124, 71);
             this.должностьComboBox.Name = "должностьComboBox";
@@ -363,6 +368,15 @@ namespace Course_Work_App
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
             // 
+            // должностиBindingSource
+            // 
+            this.должностиBindingSource.DataMember = "Должности";
+            this.должностиBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // должностиTableAdapter
+            // 
+            this.должностиTableAdapter.ClearBeforeFill = true;
+            // 
             // ChangeWorkerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -388,6 +402,7 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,5 +428,7 @@ namespace Course_Work_App
         private System.Windows.Forms.Button ChangeWorker;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.ComboBox должностьComboBox;
+        private System.Windows.Forms.BindingSource должностиBindingSource;
+        private HotelDataSetTableAdapters.ДолжностиTableAdapter должностиTableAdapter;
     }
 }

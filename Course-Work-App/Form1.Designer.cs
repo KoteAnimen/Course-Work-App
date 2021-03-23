@@ -138,7 +138,7 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(908, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(908, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -147,7 +147,7 @@ namespace Course_Work_App
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.авторизацияToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // авторизацияToolStripMenuItem
@@ -155,13 +155,13 @@ namespace Course_Work_App
             this.авторизацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ChangeUser});
             this.авторизацияToolStripMenuItem.Name = "авторизацияToolStripMenuItem";
-            this.авторизацияToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.авторизацияToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.авторизацияToolStripMenuItem.Text = "Авторизация";
             // 
             // ChangeUser
             // 
             this.ChangeUser.Name = "ChangeUser";
-            this.ChangeUser.Size = new System.Drawing.Size(213, 22);
+            this.ChangeUser.Size = new System.Drawing.Size(200, 22);
             this.ChangeUser.Text = "Сменить пользователя";
             // 
             // справкаToolStripMenuItem
@@ -169,13 +169,13 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AboutProgram});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // AboutProgram
             // 
             this.AboutProgram.Name = "AboutProgram";
-            this.AboutProgram.Size = new System.Drawing.Size(158, 22);
+            this.AboutProgram.Size = new System.Drawing.Size(149, 22);
             this.AboutProgram.Text = "О программе";
             // 
             // pictureBox1

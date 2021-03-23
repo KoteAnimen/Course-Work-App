@@ -27,6 +27,8 @@ namespace Course_Work_App
 
         private void WorkerProfile_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Должности". При необходимости она может быть перемещена или удалена.
+            this.должностиTableAdapter.Fill(this.hotelDataSet.Должности);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Персонал". При необходимости она может быть перемещена или удалена.
             this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
 

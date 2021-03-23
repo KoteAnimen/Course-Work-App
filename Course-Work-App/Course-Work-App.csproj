@@ -58,6 +58,12 @@
     <Compile Include="ChangeInfJobPosition.Designer.cs">
       <DependentUpon>ChangeInfJobPosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClientProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientProfile.Designer.cs">
+      <DependentUpon>ClientProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeInfJobPosition.resx">
       <DependentUpon>ChangeInfJobPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientProfile.resx">
+      <DependentUpon>ClientProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
