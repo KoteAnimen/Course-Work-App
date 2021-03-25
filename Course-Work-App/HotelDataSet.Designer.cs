@@ -38,11 +38,11 @@ namespace Course_Work_App {
         
         private global::System.Data.DataRelation relationПерсоналНомера;
         
-        private global::System.Data.DataRelation relationДолжностиПерсонал;
-        
         private global::System.Data.DataRelation relationКлиентыУчетРаботы;
         
         private global::System.Data.DataRelation relationНомераУчетРаботы;
+        
+        private global::System.Data.DataRelation relationДолжности_Персонал;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -323,9 +323,9 @@ namespace Course_Work_App {
                 }
             }
             this.relationПерсоналНомера = this.Relations["ПерсоналНомера"];
-            this.relationДолжностиПерсонал = this.Relations["ДолжностиПерсонал"];
             this.relationКлиентыУчетРаботы = this.Relations["КлиентыУчетРаботы"];
             this.relationНомераУчетРаботы = this.Relations["НомераУчетРаботы"];
+            this.relationДолжности_Персонал = this.Relations["Должности_Персонал"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -352,10 +352,6 @@ namespace Course_Work_App {
                         this.tableПерсонал.КодСотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableНомера.КодСотрудникаColumn}, false);
             this.Relations.Add(this.relationПерсоналНомера);
-            this.relationДолжностиПерсонал = new global::System.Data.DataRelation("ДолжностиПерсонал", new global::System.Data.DataColumn[] {
-                        this.tableДолжности.КодДолжностиColumn}, new global::System.Data.DataColumn[] {
-                        this.tableПерсонал.ДолжностьColumn}, false);
-            this.Relations.Add(this.relationДолжностиПерсонал);
             this.relationКлиентыУчетРаботы = new global::System.Data.DataRelation("КлиентыУчетРаботы", new global::System.Data.DataColumn[] {
                         this.tableКлиенты.КодКлиентаColumn}, new global::System.Data.DataColumn[] {
                         this.tableУчетРаботы.КодКлиентаColumn}, false);
@@ -364,6 +360,10 @@ namespace Course_Work_App {
                         this.tableНомера.КодНомераColumn}, new global::System.Data.DataColumn[] {
                         this.tableУчетРаботы.КодНомераColumn}, false);
             this.Relations.Add(this.relationНомераУчетРаботы);
+            this.relationДолжности_Персонал = new global::System.Data.DataRelation("Должности_Персонал", new global::System.Data.DataColumn[] {
+                        this.tableДолжности.НазваниеColumn}, new global::System.Data.DataColumn[] {
+                        this.tableПерсонал.ДолжностьColumn}, false);
+            this.Relations.Add(this.relationДолжности_Персонал);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -482,11 +482,11 @@ namespace Course_Work_App {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class ДолжностиDataTable : global::System.Data.TypedTableBase<ДолжностиRow> {
             
-            private global::System.Data.DataColumn columnКодДолжности;
-            
             private global::System.Data.DataColumn columnНазвание;
             
             private global::System.Data.DataColumn columnЗарплата;
+            
+            private global::System.Data.DataColumn columnКодДолжности;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -523,14 +523,6 @@ namespace Course_Work_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn КодДолжностиColumn {
-                get {
-                    return this.columnКодДолжности;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn НазваниеColumn {
                 get {
                     return this.columnНазвание;
@@ -542,6 +534,14 @@ namespace Course_Work_App {
             public global::System.Data.DataColumn ЗарплатаColumn {
                 get {
                     return this.columnЗарплата;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn КодДолжностиColumn {
+                get {
+                    return this.columnКодДолжности;
                 }
             }
             
@@ -582,12 +582,12 @@ namespace Course_Work_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ДолжностиRow AddДолжностиRow(int КодДолжности, string Название, decimal Зарплата) {
+            public ДолжностиRow AddДолжностиRow(string Название, decimal Зарплата, string КодДолжности) {
                 ДолжностиRow rowДолжностиRow = ((ДолжностиRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        КодДолжности,
                         Название,
-                        Зарплата};
+                        Зарплата,
+                        КодДолжности};
                 rowДолжностиRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowДолжностиRow);
                 return rowДолжностиRow;
@@ -595,7 +595,7 @@ namespace Course_Work_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ДолжностиRow FindByКодДолжности(int КодДолжности) {
+            public ДолжностиRow FindByКодДолжности(string КодДолжности) {
                 return ((ДолжностиRow)(this.Rows.Find(new object[] {
                             КодДолжности})));
             }
@@ -617,25 +617,26 @@ namespace Course_Work_App {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnКодДолжности = base.Columns["КодДолжности"];
                 this.columnНазвание = base.Columns["Название"];
                 this.columnЗарплата = base.Columns["Зарплата"];
+                this.columnКодДолжности = base.Columns["КодДолжности"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnКодДолжности = new global::System.Data.DataColumn("КодДолжности", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКодДолжности);
                 this.columnНазвание = new global::System.Data.DataColumn("Название", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnНазвание);
                 this.columnЗарплата = new global::System.Data.DataColumn("Зарплата", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnЗарплата);
+                this.columnКодДолжности = new global::System.Data.DataColumn("КодДолжности", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКодДолжности);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnКодДолжности}, true));
+                this.columnНазвание.MaxLength = 30;
                 this.columnКодДолжности.AllowDBNull = false;
                 this.columnКодДолжности.Unique = true;
-                this.columnНазвание.MaxLength = 30;
+                this.columnКодДолжности.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1686,7 +1687,7 @@ namespace Course_Work_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ПерсоналRow AddПерсоналRow(int КодСотрудника, string Фамилия, string Имя, string Отчество, string СерияНомерПаспорта, string Адрес, System.DateTime ДатаРождения, System.DateTime НачалоРабДня, System.DateTime КонецРабДня, ДолжностиRow parentДолжностиRowByДолжностиПерсонал, string Телефон, string Статус) {
+            public ПерсоналRow AddПерсоналRow(int КодСотрудника, string Фамилия, string Имя, string Отчество, string СерияНомерПаспорта, string Адрес, System.DateTime ДатаРождения, System.DateTime НачалоРабДня, System.DateTime КонецРабДня, ДолжностиRow parentДолжностиRowByДолжности_Персонал, string Телефон, string Статус) {
                 ПерсоналRow rowПерсоналRow = ((ПерсоналRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         КодСотрудника,
@@ -1701,8 +1702,8 @@ namespace Course_Work_App {
                         null,
                         Телефон,
                         Статус};
-                if ((parentДолжностиRowByДолжностиПерсонал != null)) {
-                    columnValuesArray[9] = parentДолжностиRowByДолжностиПерсонал[0];
+                if ((parentДолжностиRowByДолжности_Персонал != null)) {
+                    columnValuesArray[9] = parentДолжностиRowByДолжности_Персонал[0];
                 }
                 rowПерсоналRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowПерсоналRow);
@@ -1768,7 +1769,7 @@ namespace Course_Work_App {
                 base.Columns.Add(this.columnНачалоРабДня);
                 this.columnКонецРабДня = new global::System.Data.DataColumn("КонецРабДня", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnКонецРабДня);
-                this.columnДолжность = new global::System.Data.DataColumn("Должность", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnДолжность = new global::System.Data.DataColumn("Должность", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnДолжность);
                 this.columnТелефон = new global::System.Data.DataColumn("Телефон", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnТелефон);
@@ -2644,17 +2645,6 @@ namespace Course_Work_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int КодДолжности {
-                get {
-                    return ((int)(this[this.tableДолжности.КодДолжностиColumn]));
-                }
-                set {
-                    this[this.tableДолжности.КодДолжностиColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Название {
                 get {
                     try {
@@ -2687,6 +2677,17 @@ namespace Course_Work_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string КодДолжности {
+                get {
+                    return ((string)(this[this.tableДолжности.КодДолжностиColumn]));
+                }
+                set {
+                    this[this.tableДолжности.КодДолжностиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsНазваниеNull() {
                 return this.IsNull(this.tableДолжности.НазваниеColumn);
             }
@@ -2712,11 +2713,11 @@ namespace Course_Work_App {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ПерсоналRow[] GetПерсоналRows() {
-                if ((this.Table.ChildRelations["ДолжностиПерсонал"] == null)) {
+                if ((this.Table.ChildRelations["Должности_Персонал"] == null)) {
                     return new ПерсоналRow[0];
                 }
                 else {
-                    return ((ПерсоналRow[])(base.GetChildRows(this.Table.ChildRelations["ДолжностиПерсонал"])));
+                    return ((ПерсоналRow[])(base.GetChildRows(this.Table.ChildRelations["Должности_Персонал"])));
                 }
             }
         }
@@ -3353,10 +3354,10 @@ namespace Course_Work_App {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Должность {
+            public string Должность {
                 get {
                     try {
-                        return ((int)(this[this.tableПерсонал.ДолжностьColumn]));
+                        return ((string)(this[this.tableПерсонал.ДолжностьColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'Должность\' в таблице \'Персонал\' равно DBNull.", e);
@@ -3403,10 +3404,10 @@ namespace Course_Work_App {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ДолжностиRow ДолжностиRow {
                 get {
-                    return ((ДолжностиRow)(this.GetParentRow(this.Table.ParentRelations["ДолжностиПерсонал"])));
+                    return ((ДолжностиRow)(this.GetParentRow(this.Table.ParentRelations["Должности_Персонал"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["ДолжностиПерсонал"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["Должности_Персонал"]);
                 }
             }
             
@@ -4368,43 +4369,43 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Должности";
-            tableMapping.ColumnMappings.Add("КодДолжности", "КодДолжности");
             tableMapping.ColumnMappings.Add("Название", "Название");
             tableMapping.ColumnMappings.Add("Зарплата", "Зарплата");
+            tableMapping.ColumnMappings.Add("КодДолжности", "КодДолжности");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Должности` WHERE ((`КодДолжности` = ?) AND ((? = 1 AND `Название` IS" +
-                " NULL) OR (`Название` = ?)) AND ((? = 1 AND `Зарплата` IS NULL) OR (`Зарплата` =" +
-                " ?)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM `Должности` WHERE (((? = 1 AND `Название` IS NULL) OR (`Название` = ?" +
+                ")) AND ((? = 1 AND `Зарплата` IS NULL) OR (`Зарплата` = ?)) AND (`КодДолжности` " +
+                "= ?))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодДолжности", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Название", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Название", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Название", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Название", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Зарплата", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Зарплата", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Зарплата", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Зарплата", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодДолжности", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `Должности` (`КодДолжности`, `Название`, `Зарплата`) VALUES (?, ?, ?)" +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `Должности` (`Название`, `Зарплата`, `КодДолжности`) VALUES (?, ?, ?)" +
                 "";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодДолжности", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Название", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Название", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Зарплата", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Зарплата", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодДолжности", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `Должности` SET `КодДолжности` = ?, `Название` = ?, `Зарплата` = ? WHERE (" +
-                "(`КодДолжности` = ?) AND ((? = 1 AND `Название` IS NULL) OR (`Название` = ?)) AN" +
-                "D ((? = 1 AND `Зарплата` IS NULL) OR (`Зарплата` = ?)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE `Должности` SET `Название` = ?, `Зарплата` = ?, `КодДолжности` = ? WHERE (" +
+                "((? = 1 AND `Название` IS NULL) OR (`Название` = ?)) AND ((? = 1 AND `Зарплата` " +
+                "IS NULL) OR (`Зарплата` = ?)) AND (`КодДолжности` = ?))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодДолжности", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Название", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Название", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Зарплата", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Зарплата", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодДолжности", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодДолжности", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Название", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Название", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Название", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Название", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Зарплата", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Зарплата", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Зарплата", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Зарплата", global::System.Data.DataRowVersion.Original, false, null));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодДолжности", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодДолжности", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4420,7 +4421,7 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT КодДолжности, Название, Зарплата FROM Должности";
+            this._commandCollection[0].CommandText = "SELECT Название, Зарплата, КодДолжности FROM Должности";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4481,17 +4482,22 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_КодДолжности, string Original_Название, decimal Original_Зарплата) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_КодДолжности));
+        public virtual int Delete(string Original_Название, decimal Original_Зарплата, string Original_КодДолжности) {
             if ((Original_Название == null)) {
                 throw new global::System.ArgumentNullException("Original_Название");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Название));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Название));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_Зарплата));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_Зарплата));
+            if ((Original_КодДолжности == null)) {
+                throw new global::System.ArgumentNullException("Original_КодДолжности");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_КодДолжности));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4512,15 +4518,20 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int КодДолжности, string Название, decimal Зарплата) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(КодДолжности));
+        public virtual int Insert(string Название, decimal Зарплата, string КодДолжности) {
             if ((Название == null)) {
                 throw new global::System.ArgumentNullException("Название");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Название));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Название));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(Зарплата));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(Зарплата));
+            if ((КодДолжности == null)) {
+                throw new global::System.ArgumentNullException("КодДолжности");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(КодДолжности));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4541,25 +4552,35 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int КодДолжности, string Название, decimal Зарплата, int Original_КодДолжности, string Original_Название, decimal Original_Зарплата) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(КодДолжности));
+        public virtual int Update(string Название, decimal Зарплата, string КодДолжности, string Original_Название, decimal Original_Зарплата, string Original_КодДолжности) {
             if ((Название == null)) {
                 throw new global::System.ArgumentNullException("Название");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Название));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Название));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Зарплата));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_КодДолжности));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(Зарплата));
+            if ((КодДолжности == null)) {
+                throw new global::System.ArgumentNullException("КодДолжности");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(КодДолжности));
+            }
             if ((Original_Название == null)) {
                 throw new global::System.ArgumentNullException("Original_Название");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Название));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Название));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_Зарплата));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Original_Зарплата));
+            if ((Original_КодДолжности == null)) {
+                throw new global::System.ArgumentNullException("Original_КодДолжности");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_КодДолжности));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4580,8 +4601,8 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Название, decimal Зарплата, int Original_КодДолжности, string Original_Название, decimal Original_Зарплата) {
-            return this.Update(Original_КодДолжности, Название, Зарплата, Original_КодДолжности, Original_Название, Original_Зарплата);
+        public virtual int Update(string Название, decimal Зарплата, string Original_Название, decimal Original_Зарплата, string Original_КодДолжности) {
+            return this.Update(Название, Зарплата, Original_КодДолжности, Original_Название, Original_Зарплата, Original_КодДолжности);
         }
     }
     

@@ -42,6 +42,7 @@ namespace Course_Work_App
             System.Windows.Forms.Label должностьLabel;
             System.Windows.Forms.Label телефонLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.телефонMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Course_Work_App.HotelDataSet();
             this.датаРожденияDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -61,7 +62,6 @@ namespace Course_Work_App
             this.ChangeWorker = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.должностиTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ДолжностиTableAdapter();
-            this.телефонMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             кодСотрудникаLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
@@ -170,6 +170,15 @@ namespace Course_Work_App
             должностьLabel.TabIndex = 7;
             должностьLabel.Text = "Должность:";
             // 
+            // телефонLabel
+            // 
+            телефонLabel.AutoSize = true;
+            телефонLabel.Location = new System.Drawing.Point(21, 127);
+            телефонLabel.Name = "телефонLabel";
+            телефонLabel.Size = new System.Drawing.Size(72, 17);
+            телефонLabel.TabIndex = 13;
+            телефонLabel.Text = "Телефон:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(телефонLabel);
@@ -194,6 +203,15 @@ namespace Course_Work_App
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Личные данные сотрудника";
+            // 
+            // телефонMaskedTextBox
+            // 
+            this.телефонMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Телефон", true));
+            this.телефонMaskedTextBox.Location = new System.Drawing.Point(99, 124);
+            this.телефонMaskedTextBox.Mask = "0\\-000\\-000\\-00\\-00";
+            this.телефонMaskedTextBox.Name = "телефонMaskedTextBox";
+            this.телефонMaskedTextBox.Size = new System.Drawing.Size(180, 23);
+            this.телефонMaskedTextBox.TabIndex = 14;
             // 
             // персоналBindingSource
             // 
@@ -344,6 +362,7 @@ namespace Course_Work_App
             this.ChangeWorker.TabIndex = 2;
             this.ChangeWorker.Text = "Изменить информацию";
             this.ChangeWorker.UseVisualStyleBackColor = true;
+            this.ChangeWorker.Click += new System.EventHandler(this.ChangeWorker_Click);
             // 
             // Cancel
             // 
@@ -358,24 +377,6 @@ namespace Course_Work_App
             // должностиTableAdapter
             // 
             this.должностиTableAdapter.ClearBeforeFill = true;
-            // 
-            // телефонLabel
-            // 
-            телефонLabel.AutoSize = true;
-            телефонLabel.Location = new System.Drawing.Point(21, 127);
-            телефонLabel.Name = "телефонLabel";
-            телефонLabel.Size = new System.Drawing.Size(72, 17);
-            телефонLabel.TabIndex = 13;
-            телефонLabel.Text = "Телефон:";
-            // 
-            // телефонMaskedTextBox
-            // 
-            this.телефонMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Телефон", true));
-            this.телефонMaskedTextBox.Location = new System.Drawing.Point(99, 124);
-            this.телефонMaskedTextBox.Mask = "0\\-000\\-000\\-00\\-00";
-            this.телефонMaskedTextBox.Name = "телефонMaskedTextBox";
-            this.телефонMaskedTextBox.Size = new System.Drawing.Size(180, 23);
-            this.телефонMaskedTextBox.TabIndex = 14;
             // 
             // ChangeWorkerProfile
             // 

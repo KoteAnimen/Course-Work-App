@@ -15,6 +15,7 @@ namespace Course_Work_App
         public ChangeWorkerProfile()
         {
             InitializeComponent();
+            должностьComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void персоналBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -31,6 +32,11 @@ namespace Course_Work_App
             this.должностиTableAdapter.Fill(this.hotelDataSet.Должности);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Персонал". При необходимости она может быть перемещена или удалена.
             this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
+
+        }
+
+        private void ChangeWorker_Click(object sender, EventArgs e)
+        {
 
         }
     }
