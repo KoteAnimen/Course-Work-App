@@ -38,5 +38,18 @@ namespace Course_Work_App
             room.ShowDialog();
             this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
         }
+
+        private void ChangeInfRoom_Click(object sender, EventArgs e)
+        {
+            Room.id = номераDataGridView[0, номераDataGridView.CurrentRow.Index].Value.ToString();
+            ChangeRoom room = new ChangeRoom();
+            room.ShowDialog();
+            this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
+        }
+    }
+
+    public static class Room
+    {
+        public static string id;
     }
 }

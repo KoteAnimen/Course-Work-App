@@ -170,6 +170,7 @@ namespace Course_Work_App
             this.кодНомераTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.номераBindingSource, "КодНомера", true));
             this.кодНомераTextBox.Location = new System.Drawing.Point(160, 37);
             this.кодНомераTextBox.Name = "кодНомераTextBox";
+            this.кодНомераTextBox.ReadOnly = true;
             this.кодНомераTextBox.Size = new System.Drawing.Size(124, 23);
             this.кодНомераTextBox.TabIndex = 1;
             // 
@@ -197,7 +198,7 @@ namespace Course_Work_App
             this.Change.TabIndex = 1;
             this.Change.Text = "Изменить";
             this.Change.UseVisualStyleBackColor = true;
-            this.Change.Click += new System.EventHandler(this.Add_Click);
+            this.Change.Click += new System.EventHandler(this.Change_Click);
             // 
             // Cancel
             // 

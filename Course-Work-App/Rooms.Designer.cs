@@ -85,6 +85,7 @@ namespace Course_Work_App
             this.ChangeInfRoom.Name = "ChangeInfRoom";
             this.ChangeInfRoom.Size = new System.Drawing.Size(262, 22);
             this.ChangeInfRoom.Text = "Изменить информацию о номере";
+            this.ChangeInfRoom.Click += new System.EventHandler(this.ChangeInfRoom_Click);
             // 
             // DeleteRoom
             // 

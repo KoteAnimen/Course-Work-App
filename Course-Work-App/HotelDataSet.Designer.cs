@@ -6026,7 +6026,7 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[4];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT КодНомера, Состояние, СуточнаяСтоимость, КоличествоМест, СостояниеОплаты, " +
@@ -6037,6 +6037,24 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
             this._commandCollection[1].CommandText = "SELECT КодНомера, Состояние, СуточнаяСтоимость, КоличествоМест, СостояниеОплаты, " +
                 "КодСотрудника FROM Номера\r\nWHERE Состояние = \'Свободен\'";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        КодНомера, Состояние, СуточнаяСтоимость, КоличествоМест, СостояниеО" +
+                "платы, КодСотрудника\r\nFROM            Номера\r\nWHERE КодНомера = ?";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодНомера", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодНомера", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE       Номера\r\nSET                Состояние = ?, СуточнаяСтоимость = ?, Кол" +
+                "ичествоМест = ?, СостояниеОплаты = ?, КодСотрудника = ?\r\nWHERE        (КодНомера" +
+                " = ?)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Состояние", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Состояние", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("СуточнаяСтоимость", global::System.Data.OleDb.OleDbType.Currency, 0, global::System.Data.ParameterDirection.Input, ((byte)(19)), ((byte)(0)), "СуточнаяСтоимость", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КоличествоМест", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КоличествоМест", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("СостояниеОплаты", global::System.Data.OleDb.OleDbType.Boolean, 2, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "СостояниеОплаты", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодСотрудника", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодСотрудника", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодНомера", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодНомера", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6069,6 +6087,20 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(HotelDataSet.НомераDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByRoomId(HotelDataSet.НомераDataTable dataTable, int КодНомера) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(КодНомера));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6250,6 +6282,45 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Состояние, decimal СуточнаяСтоимость, short КоличествоМест, bool СостояниеОплаты, global::System.Nullable<int> КодСотрудника, int Original_КодНомера, string Original_Состояние, decimal Original_СуточнаяСтоимость, short Original_КоличествоМест, bool Original_СостояниеОплаты, global::System.Nullable<int> Original_КодСотрудника) {
             return this.Update(Original_КодНомера, Состояние, СуточнаяСтоимость, КоличествоМест, СостояниеОплаты, КодСотрудника, Original_КодНомера, Original_Состояние, Original_СуточнаяСтоимость, Original_КоличествоМест, Original_СостояниеОплаты, Original_КодСотрудника);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateRoom(string Состояние, decimal СуточнаяСтоимость, short КоличествоМест, bool СостояниеОплаты, global::System.Nullable<int> КодСотрудника, int Original_КодНомера) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[3];
+            if ((Состояние == null)) {
+                throw new global::System.ArgumentNullException("Состояние");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Состояние));
+            }
+            command.Parameters[1].Value = ((decimal)(СуточнаяСтоимость));
+            command.Parameters[2].Value = ((short)(КоличествоМест));
+            command.Parameters[3].Value = ((bool)(СостояниеОплаты));
+            if ((КодСотрудника.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(КодСотрудника.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[5].Value = ((int)(Original_КодНомера));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
