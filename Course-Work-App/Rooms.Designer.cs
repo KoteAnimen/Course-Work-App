@@ -92,6 +92,7 @@ namespace Course_Work_App
             this.DeleteRoom.Name = "DeleteRoom";
             this.DeleteRoom.Size = new System.Drawing.Size(262, 22);
             this.DeleteRoom.Text = "Удалить номер";
+            this.DeleteRoom.Click += new System.EventHandler(this.DeleteRoom_Click);
             // 
             // номераDataGridView
             // 

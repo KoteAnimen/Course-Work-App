@@ -46,6 +46,20 @@ namespace Course_Work_App
             room.ShowDialog();
             this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
         }
+
+        private void DeleteRoom_Click(object sender, EventArgs e)
+        {
+            Room.id = номераDataGridView[0, номераDataGridView.CurrentRow.Index].Value.ToString();
+            try
+            {
+                номераTableAdapter.DeleteRoom(Convert.ToInt32(Room.id));
+            }
+            catch
+            {
+                MessageBox.Show("Невозможно удилить информацию о номере, так как информация связана с другими таблицами", "Ошибка");
+            }
+            this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
+        }
     }
 
     public static class Room
