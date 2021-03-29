@@ -32,8 +32,17 @@ namespace Course_Work_App
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Должности". При необходимости она может быть перемещена или удалена.
             this.должностиTableAdapter.Fill(this.hotelDataSet.Должности);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Персонал". При необходимости она может быть перемещена или удалена.
-            this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
-
+            this.персоналTableAdapter.FillByWorker(this.hotelDataSet.Персонал, Convert.ToInt32(Data.Id));
+            фамилияTextBox.Text = hotelDataSet.Персонал.Rows[0][1].ToString();
+            имяTextBox.Text = hotelDataSet.Персонал.Rows[0][2].ToString();
+            отчествоTextBox.Text = hotelDataSet.Персонал.Rows[0][3].ToString();
+            серияНомерПаспортаTextBox.Text = hotelDataSet.Персонал.Rows[0][4].ToString();
+            адресTextBox.Text = hotelDataSet.Персонал.Rows[0][5].ToString();
+            датаРожденияDateTimePicker.Value = Convert.ToDateTime(hotelDataSet.Персонал.Rows[0][6]);
+            началоРабДняDateTimePicker.Value = Convert.ToDateTime(hotelDataSet.Персонал.Rows[0][7]);
+            конецРабДняDateTimePicker.Value = Convert.ToDateTime(hotelDataSet.Персонал.Rows[0][8]);
+            должностьComboBox.Text = hotelDataSet.Персонал.Rows[0][9].ToString();
+            телефонMaskedTextBox.Text = hotelDataSet.Персонал.Rows[0][10].ToString();
         }
 
         void ShowMessage(string text, string message)
@@ -56,6 +65,11 @@ namespace Course_Work_App
         private void AddWorker_Click(object sender, EventArgs e)
         {
             
+            
+        }
+
+        private void ChangeWorker_Click(object sender, EventArgs e)
+        {
             ShowMessage(фамилияTextBox.Text, "Необходимо ввести фамилию нового сотрудника");
             ShowMessage(имяTextBox.Text, "Необходимо ввести имя нового сотрудника");
             ShowMessage(отчествоTextBox.Text, "Необходимо ввести отчество нового сотрудника");
@@ -65,20 +79,19 @@ namespace Course_Work_App
             ShowMessage(датаРожденияDateTimePicker.Value, DateTime.Now, "Необходимо ввести дату рождения нового сотрудника");
             ShowMessage(кодСотрудникаTextBox.Text, "Необходимо ввести код нового сотрудника");
             ShowMessage(должностьComboBox.Text, "Необходимо указать должность нового сотрудника");
-            ShowMessage(началоРабДняDateTimePicker.Value,  Convert.ToDateTime("00:00"), "Необходимо ввести время начала рабочего дня нового сотрудника");
+            ShowMessage(началоРабДняDateTimePicker.Value, Convert.ToDateTime("00:00"), "Необходимо ввести время начала рабочего дня нового сотрудника");
             ShowMessage(конецРабДняDateTimePicker.Value, Convert.ToDateTime("00:00"), "Необходимо ввести время начала рабочего дня нового сотрудника");
 
             try
             {
-                персоналTableAdapter.Insert(Convert.ToInt32(кодСотрудникаTextBox.Text), фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, началоРабДняDateTimePicker.Value, конецРабДняDateTimePicker.Value, Convert.ToInt32(должностьComboBox.Text), телефонMaskedTextBox.Text, "Работает");
+                персоналTableAdapter.UpdateWorker(Convert.ToInt32(кодСотрудникаTextBox.Text), фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, началоРабДняDateTimePicker.Value, конецРабДняDateTimePicker.Value, должностьComboBox.Text, телефонMaskedTextBox.Text, "Работает", Convert.ToInt32(Data.Id));
                 Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString() ,"Ошибка");
+                MessageBox.Show(ex.ToString(), "Ошибка");
             }
         }
-        
     }
 }
 

@@ -39,6 +39,7 @@ namespace Course_Work_App
         {
             Workers worker = new Workers();
             worker.Show();
+
         }
 
         private void JobPositions_Click(object sender, EventArgs e)

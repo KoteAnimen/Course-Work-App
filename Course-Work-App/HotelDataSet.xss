@@ -8,25 +8,29 @@
   <Shapes>
     <Shape ID="DesignTable:Должности" ZOrder="10" X="343" Y="407" Height="172" Width="214" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="24" SplitterPosition="83" />
     <Shape ID="DesignTable:Клиенты" ZOrder="9" X="892" Y="70" Height="267" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
-    <Shape ID="DesignTable:Номера" ZOrder="2" X="343" Y="70" Height="229" Width="192" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:Персонал" ZOrder="8" X="70" Y="70" Height="305" Width="203" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:УчетРаботы" ZOrder="7" X="605" Y="70" Height="191" Width="217" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:Accounting" ZOrder="3" X="668" Y="319" Height="286" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:Номера" ZOrder="3" X="343" Y="70" Height="229" Width="192" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:Персонал" ZOrder="1" X="70" Y="70" Height="381" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:УчетРаботы" ZOrder="8" X="605" Y="70" Height="191" Width="217" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
+    <Shape ID="DesignTable:Accounting" ZOrder="4" X="668" Y="319" Height="286" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:ПерсоналНомера" ZOrder="6" LineWidth="11">
+    <Connector ID="DesignRelation:ПерсоналНомера" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>273</X>
-          <Y>165</Y>
+          <X>370</X>
+          <Y>316</Y>
         </Point>
         <Point>
-          <X>343</X>
-          <Y>165</Y>
+          <X>387</X>
+          <Y>316</Y>
+        </Point>
+        <Point>
+          <X>387</X>
+          <Y>299</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:КлиентыУчетРаботы" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:КлиентыУчетРаботы" ZOrder="6" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>892</X>
@@ -38,7 +42,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:НомераУчетРаботы" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:НомераУчетРаботы" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>535</X>
@@ -50,23 +54,19 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Должности_Персонал" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:Должности_Персонал" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>343</X>
-          <Y>424</Y>
+          <Y>468</Y>
         </Point>
         <Point>
-          <X>292</X>
-          <Y>424</Y>
+          <X>326</X>
+          <Y>468</Y>
         </Point>
         <Point>
-          <X>292</X>
-          <Y>375</Y>
-        </Point>
-        <Point>
-          <X>273</X>
-          <Y>375</Y>
+          <X>326</X>
+          <Y>451</Y>
         </Point>
       </RoutePoints>
     </Connector>

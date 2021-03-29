@@ -5828,12 +5828,38 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT КодСотрудника, Фамилия, Имя, Отчество, СерияНомерПаспорта, Адрес, ДатаРожд" +
                 "ения, НачалоРабДня, КонецРабДня, Должность, Телефон, Статус FROM Персонал";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        КодСотрудника, Фамилия, Имя, Отчество, СерияНомерПаспорта, Адрес, Д" +
+                "атаРождения, НачалоРабДня, КонецРабДня, Должность, Телефон, Статус\r\nFROM        " +
+                "    Персонал\r\nWHERE КодСотрудника = ?";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодСотрудника", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодСотрудника", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"UPDATE       Персонал
+SET                КодСотрудника = ?, Фамилия = ?, Имя = ?, Отчество = ?, СерияНомерПаспорта = ?, Адрес = ?, ДатаРождения = ?, НачалоРабДня = ?, КонецРабДня = ?, Должность = ?, Телефон = ?, Статус = ?
+WHERE        (КодСотрудника = ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодСотрудника", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодСотрудника", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Фамилия", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Фамилия", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Имя", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Имя", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Отчество", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Отчество", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("СерияНомерПаспорта", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "СерияНомерПаспорта", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Адрес", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Адрес", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ДатаРождения", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ДатаРождения", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("НачалоРабДня", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "НачалоРабДня", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КонецРабДня", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КонецРабДня", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Должность", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Должность", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Телефон", global::System.Data.OleDb.OleDbType.WChar, 30, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Телефон", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Статус", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Статус", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодСотрудника", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодСотрудника", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5858,6 +5884,20 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
             HotelDataSet.ПерсоналDataTable dataTable = new HotelDataSet.ПерсоналDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByWorker(HotelDataSet.ПерсоналDataTable dataTable, int КодСотрудника) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(КодСотрудника));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6217,6 +6257,82 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
                     string Original_Телефон, 
                     string Original_Статус) {
             return this.Update(Original_КодСотрудника, Фамилия, Имя, Отчество, СерияНомерПаспорта, Адрес, ДатаРождения, НачалоРабДня, КонецРабДня, Должность, Телефон, Статус, Original_КодСотрудника, Original_Фамилия, Original_Имя, Original_Отчество, Original_СерияНомерПаспорта, Original_Адрес, Original_ДатаРождения, Original_НачалоРабДня, Original_КонецРабДня, Original_Должность, Original_Телефон, Original_Статус);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateWorker(int КодСотрудника, string Фамилия, string Имя, string Отчество, string СерияНомерПаспорта, string Адрес, System.DateTime ДатаРождения, System.DateTime НачалоРабДня, System.DateTime КонецРабДня, string Должность, string Телефон, string Статус, int Original_КодСотрудника) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(КодСотрудника));
+            if ((Фамилия == null)) {
+                throw new global::System.ArgumentNullException("Фамилия");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Фамилия));
+            }
+            if ((Имя == null)) {
+                throw new global::System.ArgumentNullException("Имя");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Имя));
+            }
+            if ((Отчество == null)) {
+                throw new global::System.ArgumentNullException("Отчество");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Отчество));
+            }
+            if ((СерияНомерПаспорта == null)) {
+                throw new global::System.ArgumentNullException("СерияНомерПаспорта");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(СерияНомерПаспорта));
+            }
+            if ((Адрес == null)) {
+                throw new global::System.ArgumentNullException("Адрес");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(Адрес));
+            }
+            command.Parameters[6].Value = ((System.DateTime)(ДатаРождения));
+            command.Parameters[7].Value = ((System.DateTime)(НачалоРабДня));
+            command.Parameters[8].Value = ((System.DateTime)(КонецРабДня));
+            if ((Должность == null)) {
+                throw new global::System.ArgumentNullException("Должность");
+            }
+            else {
+                command.Parameters[9].Value = ((string)(Должность));
+            }
+            if ((Телефон == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(Телефон));
+            }
+            if ((Статус == null)) {
+                throw new global::System.ArgumentNullException("Статус");
+            }
+            else {
+                command.Parameters[11].Value = ((string)(Статус));
+            }
+            command.Parameters[12].Value = ((int)(Original_КодСотрудника));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

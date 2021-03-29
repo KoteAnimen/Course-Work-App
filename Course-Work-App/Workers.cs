@@ -36,12 +36,21 @@ namespace Course_Work_App
         {
             WorkerProfile profile = new WorkerProfile();
             profile.ShowDialog();
+            this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
         }
 
         private void ChangeInfWorker_Click(object sender, EventArgs e)
         {
+            Data.Id = персоналDataGridView[0, персоналDataGridView.CurrentRow.Index].Value.ToString();
             ChangeWorkerProfile profile = new ChangeWorkerProfile();
             profile.ShowDialog();
+            this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
         }
+    }
+
+
+    public static class Data
+    {
+        public static string Id;
     }
 }

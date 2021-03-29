@@ -370,7 +370,7 @@ namespace Course_Work_App
             this.ChangeWorker.TabIndex = 2;
             this.ChangeWorker.Text = "Изменить информацию о сотруднике";
             this.ChangeWorker.UseVisualStyleBackColor = true;
-            this.ChangeWorker.Click += new System.EventHandler(this.AddWorker_Click);
+            this.ChangeWorker.Click += new System.EventHandler(this.ChangeWorker_Click);
             // 
             // Cancel
             // 
