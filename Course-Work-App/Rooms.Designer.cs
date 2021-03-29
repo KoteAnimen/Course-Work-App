@@ -32,11 +32,9 @@ namespace Course_Work_App
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.операцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.ChangeInfRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.hotelDataSet = new Course_Work_App.HotelDataSet();
-            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
-            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
+            this.DeleteRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.номераDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,12 +42,14 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteRoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,35 +73,24 @@ namespace Course_Work_App
             this.операцииToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
+            // AddRoom
+            // 
+            this.AddRoom.Name = "AddRoom";
+            this.AddRoom.Size = new System.Drawing.Size(262, 22);
+            this.AddRoom.Text = "Добавить комнату(номер)";
+            this.AddRoom.Click += new System.EventHandler(this.AddRoom_Click);
+            // 
             // ChangeInfRoom
             // 
             this.ChangeInfRoom.Name = "ChangeInfRoom";
             this.ChangeInfRoom.Size = new System.Drawing.Size(262, 22);
             this.ChangeInfRoom.Text = "Изменить информацию о номере";
             // 
-            // hotelDataSet
+            // DeleteRoom
             // 
-            this.hotelDataSet.DataSetName = "HotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // номераBindingSource
-            // 
-            this.номераBindingSource.DataMember = "Номера";
-            this.номераBindingSource.DataSource = this.hotelDataSet;
-            // 
-            // номераTableAdapter
-            // 
-            this.номераTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ДолжностиTableAdapter = null;
-            this.tableAdapterManager.КлиентыTableAdapter = null;
-            this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
-            this.tableAdapterManager.ПерсоналTableAdapter = null;
-            this.tableAdapterManager.УчетРаботыTableAdapter = null;
+            this.DeleteRoom.Name = "DeleteRoom";
+            this.DeleteRoom.Size = new System.Drawing.Size(262, 22);
+            this.DeleteRoom.Text = "Удалить номер";
             // 
             // номераDataGridView
             // 
@@ -167,17 +156,30 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // AddRoom
+            // номераBindingSource
             // 
-            this.AddRoom.Name = "AddRoom";
-            this.AddRoom.Size = new System.Drawing.Size(262, 22);
-            this.AddRoom.Text = "Добавить комнату(номер)";
+            this.номераBindingSource.DataMember = "Номера";
+            this.номераBindingSource.DataSource = this.hotelDataSet;
             // 
-            // DeleteRoom
+            // hotelDataSet
             // 
-            this.DeleteRoom.Name = "DeleteRoom";
-            this.DeleteRoom.Size = new System.Drawing.Size(262, 22);
-            this.DeleteRoom.Text = "Удалить номер";
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // номераTableAdapter
+            // 
+            this.номераTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
+            this.tableAdapterManager.ДолжностиTableAdapter = null;
+            this.tableAdapterManager.КлиентыTableAdapter = null;
+            this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
+            this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.УчетРаботыTableAdapter = null;
             // 
             // Rooms
             // 
@@ -197,9 +199,9 @@ namespace Course_Work_App
             this.Load += new System.EventHandler(this.Rooms_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

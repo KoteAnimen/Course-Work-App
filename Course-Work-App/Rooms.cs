@@ -31,5 +31,12 @@ namespace Course_Work_App
             this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
 
         }
+
+        private void AddRoom_Click(object sender, EventArgs e)
+        {
+            AddRoom room = new AddRoom();
+            room.ShowDialog();
+            this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
+        }
     }
 }

@@ -35,9 +35,10 @@ namespace Course_Work_App
             System.Windows.Forms.Label количествоМестLabel;
             System.Windows.Forms.Label кодСотрудникаLabel;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.кодСотрудникаTextBox = new System.Windows.Forms.TextBox();
+            this.кодСотрудникаComboBox = new System.Windows.Forms.ComboBox();
             this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.количествоМестNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.суточнаяСтоимостьTextBox = new System.Windows.Forms.TextBox();
             this.кодНомераTextBox = new System.Windows.Forms.TextBox();
@@ -45,6 +46,15 @@ namespace Course_Work_App
             this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.Change = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.персоналTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ПерсоналTableAdapter();
+            this.workersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workersTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.WorkersTableAdapter();
+            this.workersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             кодНомераLabel = new System.Windows.Forms.Label();
             суточнаяСтоимостьLabel = new System.Windows.Forms.Label();
             количествоМестLabel = new System.Windows.Forms.Label();
@@ -52,13 +62,16 @@ namespace Course_Work_App
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.количествоМестNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // кодНомераLabel
             // 
             кодНомераLabel.AutoSize = true;
-            кодНомераLabel.Location = new System.Drawing.Point(80, 40);
+            кодНомераLabel.Location = new System.Drawing.Point(62, 40);
             кодНомераLabel.Name = "кодНомераLabel";
             кодНомераLabel.Size = new System.Drawing.Size(90, 17);
             кодНомераLabel.TabIndex = 0;
@@ -67,7 +80,7 @@ namespace Course_Work_App
             // суточнаяСтоимостьLabel
             // 
             суточнаяСтоимостьLabel.AutoSize = true;
-            суточнаяСтоимостьLabel.Location = new System.Drawing.Point(23, 75);
+            суточнаяСтоимостьLabel.Location = new System.Drawing.Point(5, 75);
             суточнаяСтоимостьLabel.Name = "суточнаяСтоимостьLabel";
             суточнаяСтоимостьLabel.Size = new System.Drawing.Size(147, 17);
             суточнаяСтоимостьLabel.TabIndex = 2;
@@ -76,7 +89,7 @@ namespace Course_Work_App
             // количествоМестLabel
             // 
             количествоМестLabel.AutoSize = true;
-            количествоМестLabel.Location = new System.Drawing.Point(45, 107);
+            количествоМестLabel.Location = new System.Drawing.Point(305, 40);
             количествоМестLabel.Name = "количествоМестLabel";
             количествоМестLabel.Size = new System.Drawing.Size(125, 17);
             количествоМестLabel.TabIndex = 4;
@@ -85,7 +98,7 @@ namespace Course_Work_App
             // кодСотрудникаLabel
             // 
             кодСотрудникаLabel.AutoSize = true;
-            кодСотрудникаLabel.Location = new System.Drawing.Point(53, 142);
+            кодСотрудникаLabel.Location = new System.Drawing.Point(313, 72);
             кодСотрудникаLabel.Name = "кодСотрудникаLabel";
             кодСотрудникаLabel.Size = new System.Drawing.Size(117, 17);
             кодСотрудникаLabel.TabIndex = 6;
@@ -94,7 +107,7 @@ namespace Course_Work_App
             // groupBox1
             // 
             this.groupBox1.Controls.Add(кодСотрудникаLabel);
-            this.groupBox1.Controls.Add(this.кодСотрудникаTextBox);
+            this.groupBox1.Controls.Add(this.кодСотрудникаComboBox);
             this.groupBox1.Controls.Add(количествоМестLabel);
             this.groupBox1.Controls.Add(this.количествоМестNumericUpDown);
             this.groupBox1.Controls.Add(суточнаяСтоимостьLabel);
@@ -105,18 +118,21 @@ namespace Course_Work_App
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(326, 199);
+            this.groupBox1.Size = new System.Drawing.Size(573, 112);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Параметры номера";
             // 
-            // кодСотрудникаTextBox
+            // кодСотрудникаComboBox
             // 
-            this.кодСотрудникаTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.номераBindingSource, "КодСотрудника", true));
-            this.кодСотрудникаTextBox.Location = new System.Drawing.Point(178, 139);
-            this.кодСотрудникаTextBox.Name = "кодСотрудникаTextBox";
-            this.кодСотрудникаTextBox.Size = new System.Drawing.Size(124, 23);
-            this.кодСотрудникаTextBox.TabIndex = 7;
+            this.кодСотрудникаComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.номераBindingSource, "КодСотрудника", true));
+            this.кодСотрудникаComboBox.DataSource = this.персоналBindingSource;
+            this.кодСотрудникаComboBox.DisplayMember = "КодСотрудника";
+            this.кодСотрудникаComboBox.FormattingEnabled = true;
+            this.кодСотрудникаComboBox.Location = new System.Drawing.Point(438, 69);
+            this.кодСотрудникаComboBox.Name = "кодСотрудникаComboBox";
+            this.кодСотрудникаComboBox.Size = new System.Drawing.Size(124, 24);
+            this.кодСотрудникаComboBox.TabIndex = 7;
             // 
             // номераBindingSource
             // 
@@ -128,10 +144,15 @@ namespace Course_Work_App
             this.hotelDataSet.DataSetName = "HotelDataSet";
             this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // персоналBindingSource
+            // 
+            this.персоналBindingSource.DataMember = "Персонал";
+            this.персоналBindingSource.DataSource = this.hotelDataSet;
+            // 
             // количествоМестNumericUpDown
             // 
             this.количествоМестNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.номераBindingSource, "КоличествоМест", true));
-            this.количествоМестNumericUpDown.Location = new System.Drawing.Point(178, 107);
+            this.количествоМестNumericUpDown.Location = new System.Drawing.Point(438, 40);
             this.количествоМестNumericUpDown.Name = "количествоМестNumericUpDown";
             this.количествоМестNumericUpDown.Size = new System.Drawing.Size(124, 23);
             this.количествоМестNumericUpDown.TabIndex = 5;
@@ -139,7 +160,7 @@ namespace Course_Work_App
             // суточнаяСтоимостьTextBox
             // 
             this.суточнаяСтоимостьTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.номераBindingSource, "СуточнаяСтоимость", true));
-            this.суточнаяСтоимостьTextBox.Location = new System.Drawing.Point(178, 72);
+            this.суточнаяСтоимостьTextBox.Location = new System.Drawing.Point(160, 72);
             this.суточнаяСтоимостьTextBox.Name = "суточнаяСтоимостьTextBox";
             this.суточнаяСтоимостьTextBox.Size = new System.Drawing.Size(124, 23);
             this.суточнаяСтоимостьTextBox.TabIndex = 3;
@@ -147,7 +168,7 @@ namespace Course_Work_App
             // кодНомераTextBox
             // 
             this.кодНомераTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.номераBindingSource, "КодНомера", true));
-            this.кодНомераTextBox.Location = new System.Drawing.Point(178, 37);
+            this.кодНомераTextBox.Location = new System.Drawing.Point(160, 37);
             this.кодНомераTextBox.Name = "кодНомераTextBox";
             this.кодНомераTextBox.Size = new System.Drawing.Size(124, 23);
             this.кодНомераTextBox.TabIndex = 1;
@@ -160,6 +181,7 @@ namespace Course_Work_App
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
             this.tableAdapterManager.ДолжностиTableAdapter = null;
             this.tableAdapterManager.КлиентыTableAdapter = null;
             this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
@@ -168,27 +190,98 @@ namespace Course_Work_App
             // 
             // Change
             // 
-            this.Change.Location = new System.Drawing.Point(17, 233);
+            this.Change.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Change.Location = new System.Drawing.Point(17, 346);
             this.Change.Name = "Change";
-            this.Change.Size = new System.Drawing.Size(156, 34);
+            this.Change.Size = new System.Drawing.Size(233, 41);
             this.Change.TabIndex = 1;
             this.Change.Text = "Изменить";
             this.Change.UseVisualStyleBackColor = true;
+            this.Change.Click += new System.EventHandler(this.Add_Click);
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(187, 233);
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel.Location = new System.Drawing.Point(360, 346);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(156, 34);
+            this.Cancel.Size = new System.Drawing.Size(233, 41);
             this.Cancel.TabIndex = 2;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // персоналTableAdapter
+            // 
+            this.персоналTableAdapter.ClearBeforeFill = true;
+            // 
+            // workersBindingSource
+            // 
+            this.workersBindingSource.DataMember = "Workers";
+            this.workersBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // workersTableAdapter
+            // 
+            this.workersTableAdapter.ClearBeforeFill = true;
+            // 
+            // workersDataGridView
+            // 
+            this.workersDataGridView.AutoGenerateColumns = false;
+            this.workersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.workersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.workersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.workersDataGridView.DataSource = this.workersBindingSource;
+            this.workersDataGridView.Location = new System.Drawing.Point(17, 135);
+            this.workersDataGridView.Name = "workersDataGridView";
+            this.workersDataGridView.ReadOnly = true;
+            this.workersDataGridView.Size = new System.Drawing.Size(573, 205);
+            this.workersDataGridView.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодСотрудника";
+            this.dataGridViewTextBoxColumn1.HeaderText = "КодСотрудника";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Фамилия";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Имя";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Отчество";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Должность";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Должность";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // ChangeRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 286);
+            this.ClientSize = new System.Drawing.Size(605, 400);
+            this.Controls.Add(this.workersDataGridView);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Change);
             this.Controls.Add(this.groupBox1);
@@ -200,13 +293,16 @@ namespace Course_Work_App
             this.Name = "ChangeRoom";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Изменить информацию о комнате";
+            this.Text = "Изменить информацию о комнате(номере)";
             this.Load += new System.EventHandler(this.AddRoom_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.количествоМестNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workersDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,10 +315,20 @@ namespace Course_Work_App
         private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox кодНомераTextBox;
-        private System.Windows.Forms.TextBox кодСотрудникаTextBox;
         private System.Windows.Forms.NumericUpDown количествоМестNumericUpDown;
         private System.Windows.Forms.TextBox суточнаяСтоимостьTextBox;
         private System.Windows.Forms.Button Change;
         private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.ComboBox кодСотрудникаComboBox;
+        private System.Windows.Forms.BindingSource персоналBindingSource;
+        private HotelDataSetTableAdapters.ПерсоналTableAdapter персоналTableAdapter;
+        private System.Windows.Forms.BindingSource workersBindingSource;
+        private HotelDataSetTableAdapters.WorkersTableAdapter workersTableAdapter;
+        private System.Windows.Forms.DataGridView workersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
     }
 }
