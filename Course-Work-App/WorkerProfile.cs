@@ -33,6 +33,8 @@ namespace Course_Work_App
             this.должностиTableAdapter.Fill(this.hotelDataSet.Должности);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Персонал". При необходимости она может быть перемещена или удалена.
             this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
+            this.персоналBindingSource.AddNew();
+            
 
         }
 
@@ -70,7 +72,8 @@ namespace Course_Work_App
 
             try
             {
-                персоналTableAdapter.Insert(Convert.ToInt32(кодСотрудникаTextBox.Text), фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, началоРабДняDateTimePicker.Value, конецРабДняDateTimePicker.Value, должностьComboBox.Text, телефонMaskedTextBox.Text, "Работает");
+                персоналTableAdapter.Insert(Convert.ToInt32(кодСотрудникаTextBox.Text), фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, началоРабДняDateTimePicker.Value, конецРабДняDateTimePicker.Value, Convert.ToInt32(должностьComboBox.Text), телефонMaskedTextBox.Text, "Работает");
+                Close();
             }
             catch(Exception ex)
             {

@@ -55,13 +55,18 @@ namespace Course_Work_App
             this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.кодСотрудникаTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.должностьComboBox = new System.Windows.Forms.ComboBox();
             this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.конецРабДняDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.началоРабДняDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AddWorker = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
             this.должностиTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ДолжностиTableAdapter();
+            this.персоналBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.должностьComboBox = new System.Windows.Forms.ComboBox();
+            this.должностиDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             кодСотрудникаLabel = new System.Windows.Forms.Label();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
@@ -78,6 +83,8 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // кодСотрудникаLabel
@@ -313,17 +320,6 @@ namespace Course_Work_App
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Рабочие данные сотрудника";
             // 
-            // должностьComboBox
-            // 
-            this.должностьComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Должность", true));
-            this.должностьComboBox.DataSource = this.должностиBindingSource;
-            this.должностьComboBox.DisplayMember = "Название";
-            this.должностьComboBox.FormattingEnabled = true;
-            this.должностьComboBox.Location = new System.Drawing.Point(124, 71);
-            this.должностьComboBox.Name = "должностьComboBox";
-            this.должностьComboBox.Size = new System.Drawing.Size(121, 24);
-            this.должностьComboBox.TabIndex = 8;
-            // 
             // должностиBindingSource
             // 
             this.должностиBindingSource.DataMember = "Должности";
@@ -357,7 +353,7 @@ namespace Course_Work_App
             // AddWorker
             // 
             this.AddWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddWorker.Location = new System.Drawing.Point(17, 328);
+            this.AddWorker.Location = new System.Drawing.Point(17, 537);
             this.AddWorker.Name = "AddWorker";
             this.AddWorker.Size = new System.Drawing.Size(309, 45);
             this.AddWorker.TabIndex = 2;
@@ -368,7 +364,7 @@ namespace Course_Work_App
             // Cancel
             // 
             this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Cancel.Location = new System.Drawing.Point(401, 328);
+            this.Cancel.Location = new System.Drawing.Point(410, 537);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(309, 45);
             this.Cancel.TabIndex = 3;
@@ -379,11 +375,61 @@ namespace Course_Work_App
             // 
             this.должностиTableAdapter.ClearBeforeFill = true;
             // 
+            // персоналBindingSource1
+            // 
+            this.персоналBindingSource1.DataMember = "Должности_Персонал";
+            this.персоналBindingSource1.DataSource = this.должностиBindingSource;
+            // 
+            // должностьComboBox
+            // 
+            this.должностьComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.персоналBindingSource, "Должность", true));
+            this.должностьComboBox.DataSource = this.должностиBindingSource;
+            this.должностьComboBox.DisplayMember = "КодДолжности";
+            this.должностьComboBox.FormattingEnabled = true;
+            this.должностьComboBox.Location = new System.Drawing.Point(124, 71);
+            this.должностьComboBox.Name = "должностьComboBox";
+            this.должностьComboBox.Size = new System.Drawing.Size(121, 24);
+            this.должностьComboBox.TabIndex = 8;
+            // 
+            // должностиDataGridView
+            // 
+            this.должностиDataGridView.AutoGenerateColumns = false;
+            this.должностиDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.должностиDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.должностиDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
+            this.должностиDataGridView.DataSource = this.должностиBindingSource;
+            this.должностиDataGridView.Location = new System.Drawing.Point(17, 316);
+            this.должностиDataGridView.Name = "должностиDataGridView";
+            this.должностиDataGridView.Size = new System.Drawing.Size(702, 215);
+            this.должностиDataGridView.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Название";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Зарплата";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Зарплата";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "КодДолжности";
+            this.dataGridViewTextBoxColumn3.HeaderText = "КодДолжности";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // WorkerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 390);
+            this.ClientSize = new System.Drawing.Size(739, 602);
+            this.Controls.Add(this.должностиDataGridView);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.AddWorker);
             this.Controls.Add(this.groupBox2);
@@ -405,6 +451,8 @@ namespace Course_Work_App
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.должностиDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -428,9 +476,14 @@ namespace Course_Work_App
         private System.Windows.Forms.DateTimePicker началоРабДняDateTimePicker;
         private System.Windows.Forms.Button AddWorker;
         private System.Windows.Forms.Button Cancel;
-        private System.Windows.Forms.ComboBox должностьComboBox;
         private System.Windows.Forms.BindingSource должностиBindingSource;
         private HotelDataSetTableAdapters.ДолжностиTableAdapter должностиTableAdapter;
         private System.Windows.Forms.MaskedTextBox телефонMaskedTextBox;
+        private System.Windows.Forms.ComboBox должностьComboBox;
+        private System.Windows.Forms.BindingSource персоналBindingSource1;
+        private System.Windows.Forms.DataGridView должностиDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
