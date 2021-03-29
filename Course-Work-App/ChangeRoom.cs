@@ -35,7 +35,9 @@ namespace Course_Work_App
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Номера". При необходимости она может быть перемещена или удалена.
             this.номераTableAdapter.FillByRoomId(this.hotelDataSet.Номера, Convert.ToInt32(Room.id));
             кодНомераTextBox.Text = hotelDataSet.Номера.Rows[0][0].ToString();
-
+            суточнаяСтоимостьTextBox.Text = hotelDataSet.Номера.Rows[0][2].ToString();
+            количествоМестNumericUpDown.Value = Convert.ToInt32(hotelDataSet.Номера.Rows[0][3]);
+            кодСотрудникаComboBox.Text = hotelDataSet.Номера.Rows[0][5].ToString();
         }
 
         private void Cancel_Click(object sender, EventArgs e)
