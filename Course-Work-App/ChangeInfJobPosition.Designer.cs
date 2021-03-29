@@ -46,6 +46,24 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // названиеLabel
+            // 
+            названиеLabel.AutoSize = true;
+            названиеLabel.Location = new System.Drawing.Point(12, 33);
+            названиеLabel.Name = "названиеLabel";
+            названиеLabel.Size = new System.Drawing.Size(76, 17);
+            названиеLabel.TabIndex = 1;
+            названиеLabel.Text = "Название:";
+            // 
+            // зарплатаLabel
+            // 
+            зарплатаLabel.AutoSize = true;
+            зарплатаLabel.Location = new System.Drawing.Point(12, 62);
+            зарплатаLabel.Name = "зарплатаLabel";
+            зарплатаLabel.Size = new System.Drawing.Size(76, 17);
+            зарплатаLabel.TabIndex = 2;
+            зарплатаLabel.Text = "Зарплата:";
+            // 
             // hotelDataSet
             // 
             this.hotelDataSet.DataSetName = "HotelDataSet";
@@ -70,15 +88,6 @@ namespace Course_Work_App
             this.tableAdapterManager.ПерсоналTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = null;
             // 
-            // названиеLabel
-            // 
-            названиеLabel.AutoSize = true;
-            названиеLabel.Location = new System.Drawing.Point(12, 33);
-            названиеLabel.Name = "названиеLabel";
-            названиеLabel.Size = new System.Drawing.Size(76, 17);
-            названиеLabel.TabIndex = 1;
-            названиеLabel.Text = "Название:";
-            // 
             // названиеTextBox
             // 
             this.названиеTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.должностиBindingSource, "Название", true));
@@ -86,15 +95,6 @@ namespace Course_Work_App
             this.названиеTextBox.Name = "названиеTextBox";
             this.названиеTextBox.Size = new System.Drawing.Size(319, 23);
             this.названиеTextBox.TabIndex = 2;
-            // 
-            // зарплатаLabel
-            // 
-            зарплатаLabel.AutoSize = true;
-            зарплатаLabel.Location = new System.Drawing.Point(12, 62);
-            зарплатаLabel.Name = "зарплатаLabel";
-            зарплатаLabel.Size = new System.Drawing.Size(76, 17);
-            зарплатаLabel.TabIndex = 2;
-            зарплатаLabel.Text = "Зарплата:";
             // 
             // зарплатаTextBox
             // 
@@ -112,6 +112,7 @@ namespace Course_Work_App
             this.ChangeInformation.TabIndex = 4;
             this.ChangeInformation.Text = "Изменить информацию";
             this.ChangeInformation.UseVisualStyleBackColor = true;
+            this.ChangeInformation.Click += new System.EventHandler(this.ChangeInformation_Click);
             // 
             // Cancel
             // 
@@ -121,6 +122,7 @@ namespace Course_Work_App
             this.Cancel.TabIndex = 5;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // ChangeInfJobPosition
             // 
@@ -135,7 +137,7 @@ namespace Course_Work_App
             this.Controls.Add(this.названиеTextBox);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangeInfJobPosition";

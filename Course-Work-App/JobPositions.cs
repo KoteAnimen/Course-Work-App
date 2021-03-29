@@ -34,8 +34,15 @@ namespace Course_Work_App
 
         private void ChangeInfJobPosition_Click(object sender, EventArgs e)
         {
+            Job.id = должностиDataGridView[0, должностиDataGridView.CurrentRow.Index].Value.ToString();
             ChangeInfJobPosition change = new ChangeInfJobPosition();
             change.ShowDialog();
+            this.должностиTableAdapter.Fill(this.hotelDataSet.Должности);
         }
+        
+    }
+    public static class Job
+    {
+        public static string id;
     }
 }
