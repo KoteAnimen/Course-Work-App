@@ -379,6 +379,26 @@ WHERE        (КодСотрудника = ?) </CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
+              <DbSource ConnectionRef="HotelConnectionString (Settings)" DbObjectName="Персонал" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDismiss" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByDismiss" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="FillByDismiss">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        КодСотрудника, Фамилия, Имя, Отчество, СерияНомерПаспорта, Адрес, ДатаРождения, НачалоРабДня, КонецРабДня, Должность, Телефон, Статус
+FROM            Персонал
+WHERE Статус = 'Уволен'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="HotelConnectionString (Settings)" DbObjectName="Персонал" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByStatus" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByStatus" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillByStatus">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        КодСотрудника, Фамилия, Имя, Отчество, СерияНомерПаспорта, Адрес, ДатаРождения, НачалоРабДня, КонецРабДня, Должность, Телефон, Статус
+FROM            Персонал
+WHERE Статус = 'Работает'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="HotelConnectionString (Settings)" DbObjectName="Персонал" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByWorker" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByWorker" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByWorker">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">

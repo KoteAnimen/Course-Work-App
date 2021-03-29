@@ -53,6 +53,21 @@ namespace Course_Work_App
             this.персоналTableAdapter.Dismiss(Convert.ToInt32(Data.Id));
             this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
         }
+
+        private void ShowWorkWorkers_Click(object sender, EventArgs e)
+        {
+            this.персоналTableAdapter.FillByStatus(this.hotelDataSet.Персонал);
+        }
+
+        private void ShowDismissWorkers_Click(object sender, EventArgs e)
+        {
+            this.персоналTableAdapter.FillByDismiss(this.hotelDataSet.Персонал);
+        }
+
+        private void ShowAllWorkers_Click(object sender, EventArgs e)
+        {
+            this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
+        }
     }
 
 
