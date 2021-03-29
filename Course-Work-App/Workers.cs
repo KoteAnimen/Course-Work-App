@@ -46,6 +46,13 @@ namespace Course_Work_App
             profile.ShowDialog();
             this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
         }
+
+        private void DismissWorker_Click(object sender, EventArgs e)
+        {
+            Data.Id = персоналDataGridView[0, персоналDataGridView.CurrentRow.Index].Value.ToString();
+            this.персоналTableAdapter.Dismiss(Convert.ToInt32(Data.Id));
+            this.персоналTableAdapter.Fill(this.hotelDataSet.Персонал);
+        }
     }
 
 

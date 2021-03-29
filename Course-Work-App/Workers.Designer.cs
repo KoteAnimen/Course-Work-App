@@ -65,7 +65,7 @@ namespace Course_Work_App
             this.операцииToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(971, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(971, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,33 +77,34 @@ namespace Course_Work_App
             this.DismissWorker,
             this.DeleteDismissWorker});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
-            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
             // AddNewWorker
             // 
             this.AddNewWorker.Name = "AddNewWorker";
-            this.AddNewWorker.Size = new System.Drawing.Size(353, 22);
+            this.AddNewWorker.Size = new System.Drawing.Size(331, 22);
             this.AddNewWorker.Text = "Добавить нового сотрудника";
             this.AddNewWorker.Click += new System.EventHandler(this.AddNewWorker_Click);
             // 
             // ChangeInfWorker
             // 
             this.ChangeInfWorker.Name = "ChangeInfWorker";
-            this.ChangeInfWorker.Size = new System.Drawing.Size(353, 22);
+            this.ChangeInfWorker.Size = new System.Drawing.Size(331, 22);
             this.ChangeInfWorker.Text = "Изменить информацию о сотруднике";
             this.ChangeInfWorker.Click += new System.EventHandler(this.ChangeInfWorker_Click);
             // 
             // DismissWorker
             // 
             this.DismissWorker.Name = "DismissWorker";
-            this.DismissWorker.Size = new System.Drawing.Size(353, 22);
+            this.DismissWorker.Size = new System.Drawing.Size(331, 22);
             this.DismissWorker.Text = "Уволить сотрудника";
+            this.DismissWorker.Click += new System.EventHandler(this.DismissWorker_Click);
             // 
             // DeleteDismissWorker
             // 
             this.DeleteDismissWorker.Name = "DeleteDismissWorker";
-            this.DeleteDismissWorker.Size = new System.Drawing.Size(353, 22);
+            this.DeleteDismissWorker.Size = new System.Drawing.Size(331, 22);
             this.DeleteDismissWorker.Text = "Удалить информацию о уволеном сотруднике";
             // 
             // hotelDataSet
