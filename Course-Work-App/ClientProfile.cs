@@ -12,7 +12,9 @@ namespace Course_Work_App
 {
     public partial class ClientProfile : Form
     {
+        decimal countDays;
         decimal countCost;
+        
         public ClientProfile()
         {
             InitializeComponent();
@@ -75,9 +77,29 @@ namespace Course_Work_App
             SetValue(состояниеComboBox.Text, "Введите состояние номера (забронирован или заселен)");
             SetValue(датаЗаселенияDateTimePicker.Value, "Введите дату заселения клиента в номер");
             SetValue(датаВыселенияDateTimePicker.Value, "Введите дату выселения клиента в номер");
+            
+        }
+
+        private void состояниеОплатыCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
             if(состояниеОплатыCheckBox.Checked == true)
             {
-                //countCost = 
+                countDays = датаВыселенияDateTimePicker.Value.DayOfYear - датаЗаселенияDateTimePicker.Value.DayOfYear;
+                if(кодНомераComboBox.Text == "" && датаЗаселенияDateTimePicker.Value != DateTime.Now && датаВыселенияDateTimePicker.Value != DateTime.Now && датаЗаселенияDateTimePicker.Value != датаВыселенияDateTimePicker.Value)
+                {
+                    MessageBox.Show("Введите код номера, дату заселения и дату выселения", "Ошибка");
+                    состояниеОплатыCheckBox.Checked = false;
+                    for(int i = 0; i < номераDataGridView.RowCount; i++)
+                    {
+                        if(кодНомераComboBox.Text == номераDataGridView[0, i].Value.ToString())
+                        {
+                            countCost = Convert.ToDecimal(номераDataGridView[2, i].Value) * countDays;
+                            break;
+                        }
+                    }
+                    общСтоимостьПроживанияTextBox.Text = countCost.ToString();
+                }
+
             }
         }
     }

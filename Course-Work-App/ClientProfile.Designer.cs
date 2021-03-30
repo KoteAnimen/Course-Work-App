@@ -451,6 +451,7 @@ namespace Course_Work_App
             this.состояниеОплатыCheckBox.TabIndex = 5;
             this.состояниеОплатыCheckBox.Text = "Оплачено";
             this.состояниеОплатыCheckBox.UseVisualStyleBackColor = true;
+            this.состояниеОплатыCheckBox.CheckedChanged += new System.EventHandler(this.состояниеОплатыCheckBox_CheckedChanged);
             // 
             // accountingBindingSource
             // 
