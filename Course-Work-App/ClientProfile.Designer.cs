@@ -68,7 +68,6 @@ namespace Course_Work_App
             this.датаЗаселенияDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.состояниеОплатыCheckBox = new System.Windows.Forms.CheckBox();
             this.accountingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.клиентыTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.КлиентыTableAdapter();
             this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
@@ -458,14 +457,11 @@ namespace Course_Work_App
             this.accountingBindingSource.DataMember = "Accounting";
             this.accountingBindingSource.DataSource = this.hotelDataSet;
             // 
-            // accountingTableAdapter
-            // 
-            this.accountingTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
             this.tableAdapterManager.ДолжностиTableAdapter = null;
             this.tableAdapterManager.КлиентыTableAdapter = this.клиентыTableAdapter;
             this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
@@ -553,6 +549,7 @@ namespace Course_Work_App
             this.AddNewClient.TabIndex = 3;
             this.AddNewClient.Text = "Добавить клиента в базу";
             this.AddNewClient.UseVisualStyleBackColor = true;
+            this.AddNewClient.Click += new System.EventHandler(this.AddNewClient_Click);
             // 
             // Cancel
             // 
@@ -562,6 +559,7 @@ namespace Course_Work_App
             this.Cancel.TabIndex = 4;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // ClientProfile
             // 
@@ -603,7 +601,6 @@ namespace Course_Work_App
         private System.Windows.Forms.GroupBox groupBox2;
         private HotelDataSet hotelDataSet;
         private System.Windows.Forms.BindingSource accountingBindingSource;
-        private HotelDataSetTableAdapters.AccountingTableAdapter accountingTableAdapter;
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private HotelDataSetTableAdapters.КлиентыTableAdapter клиентыTableAdapter;
         private System.Windows.Forms.BindingSource клиентыBindingSource;

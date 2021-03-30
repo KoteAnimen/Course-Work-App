@@ -12,6 +12,7 @@ namespace Course_Work_App
 {
     public partial class ClientProfile : Form
     {
+        decimal countCost;
         public ClientProfile()
         {
             InitializeComponent();
@@ -26,8 +27,58 @@ namespace Course_Work_App
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Клиенты". При необходимости она может быть перемещена или удалена.
             this.клиентыTableAdapter.Fill(this.hotelDataSet.Клиенты);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Accounting". При необходимости она может быть перемещена или удалена.
-            this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
+            
 
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        void SetValue(string value, string message)
+        {
+            if(value == "")
+            {
+                MessageBox.Show(message, "Ошибка");
+                return;
+            }
+        }
+        void SetValue(DateTime value, string message)
+        {
+            if (value == DateTime.Now)
+            {
+                MessageBox.Show(message, "Ошибка");
+                return;
+            }
+        }
+        void SetValue(int value, string message)
+        {
+            if (value == 0)
+            {
+                MessageBox.Show(message, "Ошибка");
+                return;
+            }
+        }
+
+        private void AddNewClient_Click(object sender, EventArgs e)
+        {
+            SetValue(фамилияTextBox.Text, "Введите фамилию клиента");
+            SetValue(имяTextBox.Text, "Введите имя клиента");
+            SetValue(отчествоTextBox.Text, "Введите отчество клиента");
+            SetValue(странаTextBox.Text, "Введите страну клиента");
+            SetValue(телефонMaskedTextBox.Text, "Введите телефон клиента");
+            SetValue(серияНомерПаспортаTextBox.Text, "Введите серию и номер паспорта клиента");
+            SetValue(адресTextBox.Text, "Введите адрес фактического проживания клиента");
+            SetValue(датаРожденияDateTimePicker.Value, "Введите дату рождения клиента");
+            SetValue(кодНомераComboBox.Text, "Введите код номера, в который бронирует или заселяет клиент");
+            SetValue(состояниеComboBox.Text, "Введите состояние номера (забронирован или заселен)");
+            SetValue(датаЗаселенияDateTimePicker.Value, "Введите дату заселения клиента в номер");
+            SetValue(датаВыселенияDateTimePicker.Value, "Введите дату выселения клиента в номер");
+            if(состояниеОплатыCheckBox.Checked == true)
+            {
+                //countCost = 
+            }
         }
     }
 }
