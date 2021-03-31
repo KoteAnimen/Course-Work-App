@@ -493,7 +493,7 @@ namespace Course_Work_App
             this.ChangeClient.Name = "ChangeClient";
             this.ChangeClient.Size = new System.Drawing.Size(231, 37);
             this.ChangeClient.TabIndex = 3;
-            this.ChangeClient.Text = "Добавить клиента в базу";
+            this.ChangeClient.Text = "Изменить анкету клиента";
             this.ChangeClient.UseVisualStyleBackColor = true;
             this.ChangeClient.Click += new System.EventHandler(this.ChangeClient_Click);
             // 

@@ -19,12 +19,12 @@ namespace Course_Work_App
         {
             InitializeComponent();
             кодНомераComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            состояниеComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            состояниеComboBox.DropDownStyle = ComboBoxStyle.DropDownList;            
         }
 
         private void ClientProfile_Load(object sender, EventArgs e)
         {
+            номераTableAdapter.UpdateStatusRoom("Свободно", Convert.ToInt32(Client.room));
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.СвободныеНомера". При необходимости она может быть перемещена или удалена.
             this.свободныеНомераTableAdapter.Fill(this.hotelDataSet.СвободныеНомера);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.УчетРаботы". При необходимости она может быть перемещена или удалена.
@@ -34,13 +34,19 @@ namespace Course_Work_App
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Клиенты". При необходимости она может быть перемещена или удалена.
             this.клиентыTableAdapter.Fill(this.hotelDataSet.Клиенты);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Accounting". При необходимости она может быть перемещена или удалена.
-            this.accountingTableAdapter.FillBy(hotelDataSet.Accounting, Client.id);
+            this.accountingTableAdapter.FillBy(hotelDataSet.Accounting, Client.id);            
+
             фамилияTextBox.Text = hotelDataSet.Accounting.Rows[0][3].ToString();
             имяTextBox.Text = hotelDataSet.Accounting.Rows[0][4].ToString();
             отчествоTextBox.Text = hotelDataSet.Accounting.Rows[0][5].ToString();
             странаTextBox.Text = hotelDataSet.Accounting.Rows[0][6].ToString();
             серияНомерПаспортаTextBox.Text = hotelDataSet.Accounting.Rows[0][7].ToString();
-
+            адресTextBox.Text = hotelDataSet.Accounting.Rows[0][8].ToString();
+            датаРожденияDateTimePicker.Value = Convert.ToDateTime(hotelDataSet.Accounting.Rows[0][9].ToString());
+            цельПриездаTextBox.Text = hotelDataSet.Accounting.Rows[0][10].ToString();
+            телефонMaskedTextBox.Text = hotelDataSet.Accounting.Rows[0][11].ToString();
+            датаЗаселенияDateTimePicker.Value = Convert.ToDateTime(hotelDataSet.Accounting.Rows[0][12].ToString());
+            датаВыселенияDateTimePicker.Value = Convert.ToDateTime(hotelDataSet.Accounting.Rows[0][13].ToString());
             общСтоимостьПроживанияTextBox.Text = "";
 
 
@@ -138,10 +144,10 @@ namespace Course_Work_App
 
             try
             {
-                клиентыTableAdapter.Insert(фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, странаTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, цельПриездаTextBox.Text, телефонMaskedTextBox.Text);
+                клиентыTableAdapter.UpdateClient(фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, странаTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, цельПриездаTextBox.Text, телефонMaskedTextBox.Text, Client.id);
                 this.клиентыTableAdapter.Fill(this.hotelDataSet.Клиенты);
                 номераTableAdapter.UpdateStatusRoom(состояниеComboBox.Text, Convert.ToInt32(кодНомераComboBox.Text));
-                учетРаботыTableAdapter.Insert(Convert.ToInt32(кодНомераComboBox.Text), Convert.ToInt32(hotelDataSet.Клиенты.Rows[hotelDataSet.Клиенты.Rows.Count - 1][0]), датаЗаселенияDateTimePicker.Value, датаВыселенияDateTimePicker.Value, countCost);
+                учетРаботыTableAdapter.UpdateAccount(Convert.ToInt32(кодНомераComboBox.Text), датаЗаселенияDateTimePicker.Value, датаВыселенияDateTimePicker.Value, countCost, Client.id);
                 Close();
             }
             catch

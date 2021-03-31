@@ -68,7 +68,7 @@ namespace Course_Work_App
             this.операцииToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(965, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(973, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,33 +80,33 @@ namespace Course_Work_App
             this.ShowClient,
             this.Search});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
-            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
             // AddNewClient
             // 
             this.AddNewClient.Name = "AddNewClient";
-            this.AddNewClient.Size = new System.Drawing.Size(264, 22);
+            this.AddNewClient.Size = new System.Drawing.Size(280, 22);
             this.AddNewClient.Text = "Новый клиент";
             this.AddNewClient.Click += new System.EventHandler(this.AddNewClient_Click);
             // 
             // ChangeInfClient
             // 
             this.ChangeInfClient.Name = "ChangeInfClient";
-            this.ChangeInfClient.Size = new System.Drawing.Size(264, 22);
+            this.ChangeInfClient.Size = new System.Drawing.Size(280, 22);
             this.ChangeInfClient.Text = "Изменить информацию о клиенте";
             this.ChangeInfClient.Click += new System.EventHandler(this.ChangeInfClient_Click);
             // 
             // ShowClient
             // 
             this.ShowClient.Name = "ShowClient";
-            this.ShowClient.Size = new System.Drawing.Size(264, 22);
+            this.ShowClient.Size = new System.Drawing.Size(280, 22);
             this.ShowClient.Text = "Просмотр анкеты клиента";
             // 
             // Search
             // 
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(264, 22);
+            this.Search.Size = new System.Drawing.Size(280, 22);
             this.Search.Text = "Поиск ";
             // 
             // accountingDataGridView
@@ -136,7 +136,7 @@ namespace Course_Work_App
             this.accountingDataGridView.DataSource = this.accountingBindingSource;
             this.accountingDataGridView.Location = new System.Drawing.Point(12, 27);
             this.accountingDataGridView.Name = "accountingDataGridView";
-            this.accountingDataGridView.Size = new System.Drawing.Size(941, 487);
+            this.accountingDataGridView.Size = new System.Drawing.Size(949, 725);
             this.accountingDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -260,7 +260,7 @@ namespace Course_Work_App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 526);
+            this.ClientSize = new System.Drawing.Size(973, 764);
             this.Controls.Add(this.accountingDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
