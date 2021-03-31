@@ -56,15 +56,7 @@ namespace Course_Work_App
                 MessageBox.Show(message, "Ошибка");
                 return;
             }
-        }
-        void SetValue(int value, string message)
-        {
-            if (value == 0)
-            {
-                MessageBox.Show(message, "Ошибка");
-                return;
-            }
-        }
+        }        
 
         private void AddNewClient_Click(object sender, EventArgs e)
         {
@@ -80,9 +72,9 @@ namespace Course_Work_App
             SetValue(состояниеComboBox.Text, "Введите состояние номера (забронирован или заселен)");
             SetValue(датаЗаселенияDateTimePicker.Value, "Введите дату заселения клиента в номер");
             SetValue(датаВыселенияDateTimePicker.Value, "Введите дату выселения клиента в номер");
-
             клиентыTableAdapter.Insert(фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, странаTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, цельПриездаTextBox.Text, телефонMaskedTextBox.Text);
-            учетРаботыTableAdapter.Insert(Convert.ToInt32(кодНомераComboBox.Text), Convert.ToInt32(hotelDataSet.Клиенты.Rows[0][0]), датаЗаселенияDateTimePicker.Value, датаВыселенияDateTimePicker.Value, countCost);
+            this.клиентыTableAdapter.Fill(this.hotelDataSet.Клиенты);
+            учетРаботыTableAdapter.Insert(Convert.ToInt32(кодНомераComboBox.Text), Convert.ToInt32(hotelDataSet.Клиенты.Rows[hotelDataSet.Клиенты.Rows.Count - 1][0]), датаЗаселенияDateTimePicker.Value, датаВыселенияDateTimePicker.Value, countCost);
             Close();
             
         }
