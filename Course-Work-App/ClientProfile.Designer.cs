@@ -421,6 +421,7 @@ namespace Course_Work_App
             this.общСтоимостьПроживанияTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.учетРаботыBindingSource, "ОбщСтоимостьПроживания", true));
             this.общСтоимостьПроживанияTextBox.Location = new System.Drawing.Point(610, 87);
             this.общСтоимостьПроживанияTextBox.Name = "общСтоимостьПроживанияTextBox";
+            this.общСтоимостьПроживанияTextBox.ReadOnly = true;
             this.общСтоимостьПроживанияTextBox.Size = new System.Drawing.Size(228, 23);
             this.общСтоимостьПроживанияTextBox.TabIndex = 11;
             // 

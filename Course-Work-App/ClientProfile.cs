@@ -18,6 +18,7 @@ namespace Course_Work_App
         public ClientProfile()
         {
             InitializeComponent();
+            
         }
 
         private void ClientProfile_Load(object sender, EventArgs e)
@@ -29,7 +30,9 @@ namespace Course_Work_App
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Клиенты". При необходимости она может быть перемещена или удалена.
             this.клиентыTableAdapter.Fill(this.hotelDataSet.Клиенты);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Accounting". При необходимости она может быть перемещена или удалена.
-            
+            клиентыBindingSource.AddNew();
+            общСтоимостьПроживанияTextBox.Text = "";
+
 
         }
 
@@ -77,6 +80,10 @@ namespace Course_Work_App
             SetValue(состояниеComboBox.Text, "Введите состояние номера (забронирован или заселен)");
             SetValue(датаЗаселенияDateTimePicker.Value, "Введите дату заселения клиента в номер");
             SetValue(датаВыселенияDateTimePicker.Value, "Введите дату выселения клиента в номер");
+
+            клиентыTableAdapter.Insert(фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, странаTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, цельПриездаTextBox.Text, телефонMaskedTextBox.Text);
+            учетРаботыTableAdapter.Insert(Convert.ToInt32(кодНомераComboBox.Text), Convert.ToInt32(hotelDataSet.Клиенты.Rows[0][0]), датаЗаселенияDateTimePicker.Value, датаВыселенияDateTimePicker.Value, countCost);
+            Close();
             
         }
 
@@ -85,19 +92,23 @@ namespace Course_Work_App
             if(состояниеОплатыCheckBox.Checked == true)
             {
                 countDays = датаВыселенияDateTimePicker.Value.DayOfYear - датаЗаселенияDateTimePicker.Value.DayOfYear;
-                if(кодНомераComboBox.Text == "" && датаЗаселенияDateTimePicker.Value != DateTime.Now && датаВыселенияDateTimePicker.Value != DateTime.Now && датаЗаселенияDateTimePicker.Value != датаВыселенияDateTimePicker.Value)
-                {
-                    MessageBox.Show("Введите код номера, дату заселения и дату выселения", "Ошибка");
-                    состояниеОплатыCheckBox.Checked = false;
+                if(датаЗаселенияDateTimePicker.Value.DayOfYear != датаВыселенияDateTimePicker.Value.DayOfYear)
+                {                    
                     for(int i = 0; i < номераDataGridView.RowCount; i++)
                     {
                         if(кодНомераComboBox.Text == номераDataGridView[0, i].Value.ToString())
                         {
-                            countCost = Convert.ToDecimal(номераDataGridView[2, i].Value) * countDays;
+                            countCost = Convert.ToDecimal(номераDataGridView[2, i].Value) * countDays;                            
                             break;
                         }
                     }
                     общСтоимостьПроживанияTextBox.Text = countCost.ToString();
+
+                }
+                else
+                {
+                    MessageBox.Show("Введите код номера, дату заселения и дату выселения", "Ошибка");
+                    состояниеОплатыCheckBox.Checked = false;
                 }
 
             }
