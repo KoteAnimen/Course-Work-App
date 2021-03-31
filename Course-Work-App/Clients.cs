@@ -30,5 +30,18 @@ namespace Course_Work_App
             profile.ShowDialog();
             this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
         }
+
+        private void ChangeInfClient_Click(object sender, EventArgs e)
+        {
+            Client.id = Convert.ToInt32(accountingDataGridView[2, accountingDataGridView.CurrentRow.Index].Value);
+            ChangeClientProfile client = new ChangeClientProfile();
+            client.ShowDialog();
+            this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
+        }
+    }
+
+    public static class Client
+    {
+        public static int id;
     }
 }

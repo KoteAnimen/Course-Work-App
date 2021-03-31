@@ -68,20 +68,22 @@ namespace Course_Work_App
             this.датаЗаселенияDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.состояниеОплатыCheckBox = new System.Windows.Forms.CheckBox();
             this.accountingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.клиентыTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.КлиентыTableAdapter();
             this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
             this.учетРаботыTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.УчетРаботыTableAdapter();
-            this.номераDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChangeClient = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.свободныеНомераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.свободныеНомераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.СвободныеНомераTableAdapter();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.свободныеНомераDataGridView = new System.Windows.Forms.DataGridView();
+            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
             отчествоLabel = new System.Windows.Forms.Label();
@@ -105,7 +107,8 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.номераDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.свободныеНомераBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.свободныеНомераDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // фамилияLabel
@@ -422,6 +425,7 @@ namespace Course_Work_App
             this.общСтоимостьПроживанияTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.учетРаботыBindingSource, "ОбщСтоимостьПроживания", true));
             this.общСтоимостьПроживанияTextBox.Location = new System.Drawing.Point(610, 87);
             this.общСтоимостьПроживанияTextBox.Name = "общСтоимостьПроживанияTextBox";
+            this.общСтоимостьПроживанияTextBox.ReadOnly = true;
             this.общСтоимостьПроживанияTextBox.Size = new System.Drawing.Size(228, 23);
             this.общСтоимостьПроживанияTextBox.TabIndex = 11;
             // 
@@ -452,24 +456,23 @@ namespace Course_Work_App
             this.состояниеОплатыCheckBox.TabIndex = 5;
             this.состояниеОплатыCheckBox.Text = "Оплачено";
             this.состояниеОплатыCheckBox.UseVisualStyleBackColor = true;
+            this.состояниеОплатыCheckBox.CheckedChanged += new System.EventHandler(this.состояниеОплатыCheckBox_CheckedChanged);
             // 
             // accountingBindingSource
             // 
             this.accountingBindingSource.DataMember = "Accounting";
             this.accountingBindingSource.DataSource = this.hotelDataSet;
             // 
-            // accountingTableAdapter
-            // 
-            this.accountingTableAdapter.ClearBeforeFill = true;
-            // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
             this.tableAdapterManager.ДолжностиTableAdapter = null;
             this.tableAdapterManager.КлиентыTableAdapter = this.клиентыTableAdapter;
             this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
             this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = this.учетРаботыTableAdapter;
             // 
             // клиентыTableAdapter
@@ -484,75 +487,15 @@ namespace Course_Work_App
             // 
             this.учетРаботыTableAdapter.ClearBeforeFill = true;
             // 
-            // номераDataGridView
-            // 
-            this.номераDataGridView.AutoGenerateColumns = false;
-            this.номераDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.номераDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.номераDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn5});
-            this.номераDataGridView.DataSource = this.номераBindingSource;
-            this.номераDataGridView.Location = new System.Drawing.Point(25, 376);
-            this.номераDataGridView.Name = "номераDataGridView";
-            this.номераDataGridView.ReadOnly = true;
-            this.номераDataGridView.Size = new System.Drawing.Size(865, 188);
-            this.номераDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодНомера";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
-            this.dataGridViewTextBoxColumn3.HeaderText = "СуточнаяСтоимость";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
-            this.dataGridViewTextBoxColumn4.HeaderText = "КоличествоМест";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "СостояниеОплаты";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
-            this.dataGridViewTextBoxColumn5.HeaderText = "КодСотрудника";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
             // ChangeClient
             // 
-            this.ChangeClient.Location = new System.Drawing.Point(25, 583);
+            this.ChangeClient.Location = new System.Drawing.Point(17, 582);
             this.ChangeClient.Name = "ChangeClient";
             this.ChangeClient.Size = new System.Drawing.Size(231, 37);
             this.ChangeClient.TabIndex = 3;
-            this.ChangeClient.Text = "Изменить профиль клиента";
+            this.ChangeClient.Text = "Добавить клиента в базу";
             this.ChangeClient.UseVisualStyleBackColor = true;
+            this.ChangeClient.Click += new System.EventHandler(this.ChangeClient_Click);
             // 
             // Cancel
             // 
@@ -562,15 +505,83 @@ namespace Course_Work_App
             this.Cancel.TabIndex = 4;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // свободныеНомераBindingSource
+            // 
+            this.свободныеНомераBindingSource.DataMember = "СвободныеНомера";
+            this.свободныеНомераBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // свободныеНомераTableAdapter
+            // 
+            this.свободныеНомераTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "СостояниеОплаты";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
+            this.dataGridViewTextBoxColumn5.HeaderText = "КодСотрудника";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
+            this.dataGridViewTextBoxColumn4.HeaderText = "КоличествоМест";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
+            this.dataGridViewTextBoxColumn3.HeaderText = "СуточнаяСтоимость";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
+            this.dataGridViewTextBoxColumn1.HeaderText = "КодНомера";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // свободныеНомераDataGridView
+            // 
+            this.свободныеНомераDataGridView.AutoGenerateColumns = false;
+            this.свободныеНомераDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.свободныеНомераDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.свободныеНомераDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewCheckBoxColumn1});
+            this.свободныеНомераDataGridView.DataSource = this.свободныеНомераBindingSource;
+            this.свободныеНомераDataGridView.Location = new System.Drawing.Point(17, 367);
+            this.свободныеНомераDataGridView.Name = "свободныеНомераDataGridView";
+            this.свободныеНомераDataGridView.Size = new System.Drawing.Size(876, 210);
+            this.свободныеНомераDataGridView.TabIndex = 4;
+            // 
+            // accountingTableAdapter
+            // 
+            this.accountingTableAdapter.ClearBeforeFill = true;
             // 
             // ChangeClientProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 648);
+            this.ClientSize = new System.Drawing.Size(913, 640);
+            this.Controls.Add(this.свободныеНомераDataGridView);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.ChangeClient);
-            this.Controls.Add(this.номераDataGridView);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -580,7 +591,7 @@ namespace Course_Work_App
             this.Name = "ChangeClientProfile";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Анкета клиента";
+            this.Text = "Изменить анкету клиента";
             this.Load += new System.EventHandler(this.ClientProfile_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -592,7 +603,8 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.номераDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.свободныеНомераBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.свободныеНомераDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,7 +615,6 @@ namespace Course_Work_App
         private System.Windows.Forms.GroupBox groupBox2;
         private HotelDataSet hotelDataSet;
         private System.Windows.Forms.BindingSource accountingBindingSource;
-        private HotelDataSetTableAdapters.AccountingTableAdapter accountingTableAdapter;
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private HotelDataSetTableAdapters.КлиентыTableAdapter клиентыTableAdapter;
         private System.Windows.Forms.BindingSource клиентыBindingSource;
@@ -627,14 +638,17 @@ namespace Course_Work_App
         private System.Windows.Forms.DateTimePicker датаЗаселенияDateTimePicker;
         private System.Windows.Forms.ComboBox кодНомераComboBox;
         private System.Windows.Forms.BindingSource номераBindingSource1;
-        private System.Windows.Forms.DataGridView номераDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button ChangeClient;
         private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.BindingSource свободныеНомераBindingSource;
+        private HotelDataSetTableAdapters.СвободныеНомераTableAdapter свободныеНомераTableAdapter;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView свободныеНомераDataGridView;
+        private HotelDataSetTableAdapters.AccountingTableAdapter accountingTableAdapter;
     }
 }

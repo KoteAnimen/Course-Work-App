@@ -36,10 +36,6 @@ namespace Course_Work_App
             this.ChangeInfClient = new System.Windows.Forms.ToolStripMenuItem();
             this.ShowClient = new System.Windows.Forms.ToolStripMenuItem();
             this.Search = new System.Windows.Forms.ToolStripMenuItem();
-            this.hotelDataSet = new Course_Work_App.HotelDataSet();
-            this.accountingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
-            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             this.accountingDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,10 +52,14 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
+            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -95,6 +95,7 @@ namespace Course_Work_App
             this.ChangeInfClient.Name = "ChangeInfClient";
             this.ChangeInfClient.Size = new System.Drawing.Size(264, 22);
             this.ChangeInfClient.Text = "Изменить информацию о клиенте";
+            this.ChangeInfClient.Click += new System.EventHandler(this.ChangeInfClient_Click);
             // 
             // ShowClient
             // 
@@ -107,32 +108,6 @@ namespace Course_Work_App
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(264, 22);
             this.Search.Text = "Поиск ";
-            // 
-            // hotelDataSet
-            // 
-            this.hotelDataSet.DataSetName = "HotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // accountingBindingSource
-            // 
-            this.accountingBindingSource.DataMember = "Accounting";
-            this.accountingBindingSource.DataSource = this.hotelDataSet;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.WorkersTableAdapter = null;
-            this.tableAdapterManager.ДолжностиTableAdapter = null;
-            this.tableAdapterManager.КлиентыTableAdapter = null;
-            this.tableAdapterManager.НомераTableAdapter = null;
-            this.tableAdapterManager.ПерсоналTableAdapter = null;
-            this.tableAdapterManager.УчетРаботыTableAdapter = null;
-            // 
-            // accountingTableAdapter
-            // 
-            this.accountingTableAdapter.ClearBeforeFill = true;
             // 
             // accountingDataGridView
             // 
@@ -254,6 +229,33 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn15.HeaderText = "ОбщСтоимостьПроживания";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
+            // accountingBindingSource
+            // 
+            this.accountingBindingSource.DataMember = "Accounting";
+            this.accountingBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
+            this.tableAdapterManager.ДолжностиTableAdapter = null;
+            this.tableAdapterManager.КлиентыTableAdapter = null;
+            this.tableAdapterManager.НомераTableAdapter = null;
+            this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
+            this.tableAdapterManager.УчетРаботыTableAdapter = null;
+            // 
+            // accountingTableAdapter
+            // 
+            this.accountingTableAdapter.ClearBeforeFill = true;
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -272,9 +274,9 @@ namespace Course_Work_App
             this.Load += new System.EventHandler(this.Clients_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
