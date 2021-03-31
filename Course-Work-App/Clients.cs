@@ -19,7 +19,9 @@ namespace Course_Work_App
 
         private void Clients_Load(object sender, EventArgs e)
         {
-            
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Номера". При необходимости она может быть перемещена или удалена.
+            this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
+
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Accounting". При необходимости она может быть перемещена или удалена.
             this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
 
@@ -35,17 +37,31 @@ namespace Course_Work_App
         private void ChangeInfClient_Click(object sender, EventArgs e)
         {
             Client.id = Convert.ToInt32(accountingDataGridView[2, accountingDataGridView.CurrentRow.Index].Value);
-            Client.room = accountingDataGridView[1, accountingDataGridView.CurrentRow.Index].Value.ToString();
-            
+            Client.idRoom = accountingDataGridView[1, accountingDataGridView.CurrentRow.Index].Value.ToString();
+            searchRoom(Convert.ToInt32(Client.idRoom), ref Client.statusRoom);
             ChangeClientProfile client = new ChangeClientProfile();
             client.ShowDialog();
             this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
+        }
+        void searchRoom(int idRoom, ref string statusRoom)
+        {
+
+            for (int i = 0; i < hotelDataSet.Номера.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(hotelDataSet.Номера.Rows[i][0]) == idRoom)
+                {
+                    statusRoom = hotelDataSet.Номера.Rows[i][1].ToString();
+                    break;
+                }
+            }          
+
         }
     }
 
     public static class Client
     {
         public static int id;
-        public static string room;
+        public static string idRoom;
+        public static string statusRoom;
     }
 }

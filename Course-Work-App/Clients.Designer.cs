@@ -56,10 +56,13 @@ namespace Course_Work_App
             this.hotelDataSet = new Course_Work_App.HotelDataSet();
             this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
+            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +71,7 @@ namespace Course_Work_App
             this.операцииToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(973, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1286, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -136,7 +139,7 @@ namespace Course_Work_App
             this.accountingDataGridView.DataSource = this.accountingBindingSource;
             this.accountingDataGridView.Location = new System.Drawing.Point(12, 27);
             this.accountingDataGridView.Name = "accountingDataGridView";
-            this.accountingDataGridView.Size = new System.Drawing.Size(949, 725);
+            this.accountingDataGridView.Size = new System.Drawing.Size(1262, 733);
             this.accountingDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -256,11 +259,20 @@ namespace Course_Work_App
             // 
             this.accountingTableAdapter.ClearBeforeFill = true;
             // 
+            // номераBindingSource
+            // 
+            this.номераBindingSource.DataMember = "Номера";
+            this.номераBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // номераTableAdapter
+            // 
+            this.номераTableAdapter.ClearBeforeFill = true;
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 764);
+            this.ClientSize = new System.Drawing.Size(1286, 772);
             this.Controls.Add(this.accountingDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -277,6 +289,7 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.accountingDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,5 +323,7 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.BindingSource номераBindingSource;
+        private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
     }
 }
