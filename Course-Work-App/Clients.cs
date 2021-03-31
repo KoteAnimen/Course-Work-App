@@ -56,6 +56,14 @@ namespace Course_Work_App
             }          
 
         }
+
+        private void ShowClient_Click(object sender, EventArgs e)
+        {
+            Client.id = Convert.ToInt32(accountingDataGridView[2, accountingDataGridView.CurrentRow.Index].Value);
+            ShowClientProfile client = new ShowClientProfile();
+            client.ShowDialog();
+
+        }
     }
 
     public static class Client

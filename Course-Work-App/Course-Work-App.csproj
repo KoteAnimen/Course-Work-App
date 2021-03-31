@@ -52,6 +52,12 @@
     <Compile Include="Accounting.Designer.cs">
       <DependentUpon>Accounting.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowClientProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowClientProfile.Designer.cs">
+      <DependentUpon>ShowClientProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangeRoom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,12 +78,6 @@
     </Compile>
     <Compile Include="HotelDataSet.cs">
       <DependentUpon>HotelDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ShowClientProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShowClientProfile.Designer.cs">
-      <DependentUpon>ShowClientProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="ChangeInfJobPosition.cs">
       <SubType>Form</SubType>
@@ -143,6 +143,9 @@
     <EmbeddedResource Include="Accounting.resx">
       <DependentUpon>Accounting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShowClientProfile.resx">
+      <DependentUpon>ShowClientProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeRoom.resx">
       <DependentUpon>ChangeRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,9 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeClientProfile.resx">
       <DependentUpon>ChangeClientProfile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShowClientProfile.resx">
-      <DependentUpon>ShowClientProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeInfJobPosition.resx">
       <DependentUpon>ChangeInfJobPosition.cs</DependentUpon>

@@ -105,6 +105,7 @@ namespace Course_Work_App
             this.ShowClient.Name = "ShowClient";
             this.ShowClient.Size = new System.Drawing.Size(280, 22);
             this.ShowClient.Text = "Просмотр анкеты клиента";
+            this.ShowClient.Click += new System.EventHandler(this.ShowClient_Click);
             // 
             // Search
             // 
