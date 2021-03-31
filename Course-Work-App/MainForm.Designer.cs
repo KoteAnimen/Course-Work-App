@@ -1,7 +1,7 @@
 ﻿
 namespace Course_Work_App
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -36,9 +36,6 @@ namespace Course_Work_App
             this.Clients = new System.Windows.Forms.Button();
             this.Rooms = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.авторизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ChangeUser = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -134,35 +131,12 @@ namespace Course_Work_App
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(908, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.авторизацияToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // авторизацияToolStripMenuItem
-            // 
-            this.авторизацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ChangeUser});
-            this.авторизацияToolStripMenuItem.Name = "авторизацияToolStripMenuItem";
-            this.авторизацияToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.авторизацияToolStripMenuItem.Text = "Авторизация";
-            // 
-            // ChangeUser
-            // 
-            this.ChangeUser.Name = "ChangeUser";
-            this.ChangeUser.Size = new System.Drawing.Size(200, 22);
-            this.ChangeUser.Text = "Сменить пользователя";
             // 
             // справкаToolStripMenuItem
             // 
@@ -175,7 +149,7 @@ namespace Course_Work_App
             // AboutProgram
             // 
             this.AboutProgram.Name = "AboutProgram";
-            this.AboutProgram.Size = new System.Drawing.Size(149, 22);
+            this.AboutProgram.Size = new System.Drawing.Size(180, 22);
             this.AboutProgram.Text = "О программе";
             // 
             // pictureBox1
@@ -228,9 +202,6 @@ namespace Course_Work_App
         private System.Windows.Forms.Button Clients;
         private System.Windows.Forms.Button Rooms;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem авторизацияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ChangeUser;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutProgram;
     }
