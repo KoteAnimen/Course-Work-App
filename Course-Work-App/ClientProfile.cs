@@ -18,7 +18,9 @@ namespace Course_Work_App
         public ClientProfile()
         {
             InitializeComponent();
-            
+            кодНомераComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            состояниеComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
         private void ClientProfile_Load(object sender, EventArgs e)
