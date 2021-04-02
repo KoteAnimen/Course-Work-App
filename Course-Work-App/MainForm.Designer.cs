@@ -29,6 +29,7 @@ namespace Course_Work_App
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.JobPositions = new System.Windows.Forms.Button();
             this.Workers = new System.Windows.Forms.Button();
@@ -39,9 +40,18 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
+            this.учетРаботыBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.учетРаботыTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.УчетРаботыTableAdapter();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -54,11 +64,11 @@ namespace Course_Work_App
             this.groupBox1.Controls.Add(this.Clients);
             this.groupBox1.Controls.Add(this.Rooms);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 47);
+            this.groupBox1.Location = new System.Drawing.Point(17, 29);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(380, 464);
+            this.groupBox1.Size = new System.Drawing.Size(380, 492);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Главное меню";
@@ -134,7 +144,7 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(908, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(942, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -143,13 +153,13 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AboutProgram});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // AboutProgram
             // 
             this.AboutProgram.Name = "AboutProgram";
-            this.AboutProgram.Size = new System.Drawing.Size(180, 22);
+            this.AboutProgram.Size = new System.Drawing.Size(158, 22);
             this.AboutProgram.Text = "О программе";
             // 
             // pictureBox1
@@ -158,19 +168,54 @@ namespace Course_Work_App
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Course_Work_App.Properties.Resources.Captura_de_pantalla_2013_08_12_a_las_00_59_01;
-            this.pictureBox1.Location = new System.Drawing.Point(405, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(405, 29);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 464);
+            this.pictureBox1.Size = new System.Drawing.Size(534, 492);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // Form1
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // номераBindingSource
+            // 
+            this.номераBindingSource.DataMember = "Номера";
+            this.номераBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // номераTableAdapter
+            // 
+            this.номераTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
+            this.tableAdapterManager.ДолжностиTableAdapter = null;
+            this.tableAdapterManager.КлиентыTableAdapter = null;
+            this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
+            this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
+            this.tableAdapterManager.УчетРаботыTableAdapter = this.учетРаботыTableAdapter;
+            // 
+            // учетРаботыBindingSource
+            // 
+            this.учетРаботыBindingSource.DataMember = "УчетРаботы";
+            this.учетРаботыBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // учетРаботыTableAdapter
+            // 
+            this.учетРаботыTableAdapter.ClearBeforeFill = true;
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 526);
+            this.ClientSize = new System.Drawing.Size(942, 536);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -180,13 +225,17 @@ namespace Course_Work_App
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Гостиница";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +253,12 @@ namespace Course_Work_App
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutProgram;
+        private HotelDataSet hotelDataSet;
+        private System.Windows.Forms.BindingSource номераBindingSource;
+        private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
+        private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private HotelDataSetTableAdapters.УчетРаботыTableAdapter учетРаботыTableAdapter;
+        private System.Windows.Forms.BindingSource учетРаботыBindingSource;
     }
 }
 

@@ -47,5 +47,29 @@ namespace Course_Work_App
             JobPositions job = new JobPositions();
             job.Show();
         }
+
+        private void номераBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.номераBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hotelDataSet);
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.УчетРаботы". При необходимости она может быть перемещена или удалена.
+            this.учетРаботыTableAdapter.Fill(this.hotelDataSet.УчетРаботы);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Номера". При необходимости она может быть перемещена или удалена.
+            this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
+
+            for(int i = 0; i < hotelDataSet.УчетРаботы.Rows.Count; i++)
+            {
+                if(Convert.ToDateTime(hotelDataSet.УчетРаботы.Rows[i][4]).DayOfYear  == DateTime.Now.DayOfYear)
+                {
+                    номераTableAdapter.UpdateStatusRoom("Свободен", Convert.ToInt32(hotelDataSet.УчетРаботы.Rows[i][1]));
+                }
+            }
+        }
     }
 }
