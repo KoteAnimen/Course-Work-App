@@ -9093,7 +9093,7 @@ WHERE        (КодСотрудника = ?)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[2];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        УчетРаботы.КодОперации, УчетРаботы.КодНомера, УчетРаботы.КодКлиента, Клиенты.Фамилия, Клиенты.Имя, Клиенты.Отчество, Клиенты.Страна, Клиенты.СерияНомерПаспорта, Клиенты.Адрес, 
@@ -9111,6 +9111,17 @@ FROM            (Клиенты INNER JOIN
 WHERE        (Клиенты.КодКлиента = ?)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("КодКлиента", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодКлиента", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT   УчетРаботы.КодОперации, УчетРаботы.КодНомера, УчетРаботы.КодКлиента, Клиенты.Фамилия, Клиенты.Имя, Клиенты.Отчество, Клиенты.Страна, Клиенты.СерияНомерПаспорта, Клиенты.Адрес, Клиенты.ДатаРождения, 
+                Клиенты.ЦельПриезда, Клиенты.Телефон, УчетРаботы.ДатаЗаселения, УчетРаботы.ДатаВыселения, УчетРаботы.ОбщСтоимостьПроживания
+FROM      (Клиенты INNER JOIN
+                УчетРаботы ON Клиенты.КодКлиента = УчетРаботы.КодКлиента)
+WHERE Клиенты.Фамилия = ? AND Клиенты.Имя = ? AND Клиенты.Отчество = ?";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Фамилия", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Фамилия", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Имя", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Имя", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Отчество", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Отчество", global::System.Data.DataRowVersion.Current, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9144,6 +9155,37 @@ WHERE        (Клиенты.КодКлиента = ?)";
         public virtual int FillBy(HotelDataSet.AccountingDataTable dataTable, int КодКлиента) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(КодКлиента));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByFIO(HotelDataSet.AccountingDataTable dataTable, string Фамилия, string Имя, string Отчество) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Фамилия == null)) {
+                throw new global::System.ArgumentNullException("Фамилия");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Фамилия));
+            }
+            if ((Имя == null)) {
+                throw new global::System.ArgumentNullException("Имя");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Имя));
+            }
+            if ((Отчество == null)) {
+                throw new global::System.ArgumentNullException("Отчество");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Отчество));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

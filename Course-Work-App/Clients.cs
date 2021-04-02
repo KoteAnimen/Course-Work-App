@@ -64,6 +64,21 @@ namespace Course_Work_App
             client.ShowDialog();
 
         }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            Search search = new Search();
+            search.ShowDialog();
+            if(Client.resolve == true)
+            {
+                accountingTableAdapter.FillByFIO(hotelDataSet.Accounting, Client.lastName, Client.firstName, Client.middleName);
+            }
+        }
+
+        private void ShowAll_Click(object sender, EventArgs e)
+        {
+            this.accountingTableAdapter.Fill(this.hotelDataSet.Accounting);
+        }
     }
 
     public static class Client
@@ -71,5 +86,9 @@ namespace Course_Work_App
         public static int id;
         public static string idRoom;
         public static string statusRoom;
+        public static string firstName;
+        public static string lastName;
+        public static string middleName;
+        public static bool resolve;
     }
 }

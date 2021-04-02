@@ -58,6 +58,7 @@ namespace Course_Work_App
             this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
+            this.ShowAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
@@ -81,7 +82,8 @@ namespace Course_Work_App
             this.AddNewClient,
             this.ChangeInfClient,
             this.ShowClient,
-            this.Search});
+            this.Search,
+            this.ShowAll});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
             this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.операцииToolStripMenuItem.Text = "Операции";
@@ -112,6 +114,7 @@ namespace Course_Work_App
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(280, 22);
             this.Search.Text = "Поиск ";
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // accountingDataGridView
             // 
@@ -269,6 +272,13 @@ namespace Course_Work_App
             // 
             this.номераTableAdapter.ClearBeforeFill = true;
             // 
+            // ShowAll
+            // 
+            this.ShowAll.Name = "ShowAll";
+            this.ShowAll.Size = new System.Drawing.Size(280, 22);
+            this.ShowAll.Text = "Показать всех";
+            this.ShowAll.Click += new System.EventHandler(this.ShowAll_Click);
+            // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,5 +336,6 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.BindingSource номераBindingSource;
         private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem ShowAll;
     }
 }
