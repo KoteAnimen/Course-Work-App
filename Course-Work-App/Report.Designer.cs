@@ -30,7 +30,8 @@ namespace Course_Work_App
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.Save = new System.Windows.Forms.ToolStrip();
+            this.SaveReport = new System.Windows.Forms.ToolStripButton();
             this.hotelDataSet = new Course_Work_App.HotelDataSet();
             this.учетРаботыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.учетРаботыTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.УчетРаботыTableAdapter();
@@ -45,6 +46,8 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableCount = new System.Windows.Forms.DataGridView();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.Save.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listSalaryWorkersBindingSource)).BeginInit();
@@ -52,13 +55,24 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.tableCount)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip1
+            // Save
             // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            this.Save.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveReport});
+            this.Save.Location = new System.Drawing.Point(0, 0);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(1067, 25);
+            this.Save.TabIndex = 0;
+            // 
+            // SaveReport
+            // 
+            this.SaveReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.SaveReport.Image = global::Course_Work_App.Properties.Resources.save;
+            this.SaveReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveReport.Name = "SaveReport";
+            this.SaveReport.Size = new System.Drawing.Size(23, 22);
+            this.SaveReport.Text = "Сохранить отчет";
+            this.SaveReport.Click += new System.EventHandler(this.SaveReport_Click);
             // 
             // hotelDataSet
             // 
@@ -170,7 +184,7 @@ namespace Course_Work_App
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tableCount);
             this.Controls.Add(this.учетРаботыDataGridView);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.Save);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Report";
@@ -178,6 +192,8 @@ namespace Course_Work_App
             this.Text = "Отчет за текущий месяц";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Report_Load);
+            this.Save.ResumeLayout(false);
+            this.Save.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listSalaryWorkersBindingSource)).EndInit();
@@ -190,7 +206,7 @@ namespace Course_Work_App
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip Save;
         private HotelDataSet hotelDataSet;
         private System.Windows.Forms.BindingSource учетРаботыBindingSource;
         private HotelDataSetTableAdapters.УчетРаботыTableAdapter учетРаботыTableAdapter;
@@ -205,5 +221,7 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridView tableCount;
+        private System.Windows.Forms.ToolStripButton SaveReport;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
