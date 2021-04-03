@@ -67,7 +67,7 @@ namespace Course_Work_App
 
             for(int i = 0; i < hotelDataSet.FullyRooms.Rows.Count; i++)
             {
-                if(Convert.ToDateTime(hotelDataSet.FullyRooms.Rows[i][4]).DayOfYear  == DateTime.Now.DayOfYear)
+                if(Convert.ToDateTime(hotelDataSet.FullyRooms.Rows[i][2]).DayOfYear  == DateTime.Now.DayOfYear)
                 {
                     номераTableAdapter.UpdateStatusRoom("Свободен", Convert.ToInt32(hotelDataSet.FullyRooms.Rows[i][0]));
                 }

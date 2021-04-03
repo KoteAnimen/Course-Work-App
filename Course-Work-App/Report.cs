@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Course_Work_App
 {
-    public partial class Accounting : Form
+    public partial class Report : Form
     {
-        public Accounting()
+        public Report()
         {
             InitializeComponent();
         }
@@ -25,17 +25,11 @@ namespace Course_Work_App
 
         }
 
-        private void Accounting_Load(object sender, EventArgs e)
+        private void Report_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.УчетРаботы". При необходимости она может быть перемещена или удалена.
-            this.учетРаботыTableAdapter.Fill(this.hotelDataSet.УчетРаботы);
+            this.учетРаботыTableAdapter.FillBy(this.hotelDataSet.УчетРаботы);
 
-        }
-
-        private void MakeReport_Click(object sender, EventArgs e)
-        {
-            Report report = new Report();
-            report.ShowDialog();
         }
     }
 }

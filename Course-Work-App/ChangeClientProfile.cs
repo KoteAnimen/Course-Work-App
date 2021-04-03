@@ -26,7 +26,7 @@ namespace Course_Work_App
         private void ClientProfile_Load(object sender, EventArgs e)
         {
             
-            номераTableAdapter.UpdateStatusRoom("Свободно", Convert.ToInt32(Client.idRoom));
+            номераTableAdapter.UpdateStatusRoom("Свободен", Convert.ToInt32(Client.idRoom));
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.СвободныеНомера". При необходимости она может быть перемещена или удалена.
             this.свободныеНомераTableAdapter.Fill(this.hotelDataSet.СвободныеНомера);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.УчетРаботы". При необходимости она может быть перемещена или удалена.

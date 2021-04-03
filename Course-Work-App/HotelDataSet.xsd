@@ -612,6 +612,15 @@ WHERE        (КодСотрудника = ?)</CommandText>
               <Mapping SourceColumn="ОбщСтоимостьПроживания" DataSetColumn="ОбщСтоимостьПроживания" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="HotelConnectionString (Settings)" DbObjectName="УчетРаботы" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT КодОперации, КодНомера, КодКлиента, ДатаЗаселения, ДатаВыселения, ОбщСтоимостьПроживания FROM УчетРаботы
+WHERE Year([ДатаЗаселения]) = Year(Now()) And Month([ДатаЗаселения]) = Month(Now())</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="HotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateAccount" Modifier="Public" Name="UpdateAccount" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdateAccount">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -849,6 +858,26 @@ WHERE   (Номера.Состояние = 'Заселен')</CommandText>
               <Mapping SourceColumn="КодНомера" DataSetColumn="КодНомера" />
               <Mapping SourceColumn="Состояние" DataSetColumn="Состояние" />
               <Mapping SourceColumn="ДатаВыселения" DataSetColumn="ДатаВыселения" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListSalaryWorkersTableAdapter" GeneratorDataComponentClassName="ListSalaryWorkersTableAdapter" Name="ListSalaryWorkers" UserDataComponentName="ListSalaryWorkersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HotelConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   Персонал.КодСотрудника, Персонал.Должность, Должности.Зарплата
+FROM      (Должности INNER JOIN
+                Персонал ON Должности.КодДолжности = Персонал.Должность)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="КодСотрудника" DataSetColumn="КодСотрудника" />
+              <Mapping SourceColumn="Должность" DataSetColumn="Должность" />
+              <Mapping SourceColumn="Зарплата" DataSetColumn="Зарплата" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1169,6 +1198,21 @@ WHERE   (Номера.Состояние = 'Заселен')</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ДатаВыселения" msprop:Generator_ColumnVarNameInTable="columnДатаВыселения" msprop:Generator_ColumnPropNameInRow="ДатаВыселения" msprop:Generator_ColumnPropNameInTable="ДатаВыселенияColumn" msprop:Generator_UserColumnName="ДатаВыселения" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListSalaryWorkers" msprop:Generator_TableClassName="ListSalaryWorkersDataTable" msprop:Generator_TableVarName="tableListSalaryWorkers" msprop:Generator_TablePropName="ListSalaryWorkers" msprop:Generator_RowDeletingName="ListSalaryWorkersRowDeleting" msprop:Generator_RowChangingName="ListSalaryWorkersRowChanging" msprop:Generator_RowEvHandlerName="ListSalaryWorkersRowChangeEventHandler" msprop:Generator_RowDeletedName="ListSalaryWorkersRowDeleted" msprop:Generator_UserTableName="ListSalaryWorkers" msprop:Generator_RowChangedName="ListSalaryWorkersRowChanged" msprop:Generator_RowEvArgName="ListSalaryWorkersRowChangeEvent" msprop:Generator_RowClassName="ListSalaryWorkersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="КодСотрудника" msprop:Generator_ColumnVarNameInTable="columnКодСотрудника" msprop:Generator_ColumnPropNameInRow="КодСотрудника" msprop:Generator_ColumnPropNameInTable="КодСотрудникаColumn" msprop:Generator_UserColumnName="КодСотрудника" type="xs:int" minOccurs="0" />
+              <xs:element name="Должность" msprop:Generator_ColumnVarNameInTable="columnДолжность" msprop:Generator_ColumnPropNameInRow="Должность" msprop:Generator_ColumnPropNameInTable="ДолжностьColumn" msprop:Generator_UserColumnName="Должность" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Зарплата" msprop:Generator_ColumnVarNameInTable="columnЗарплата" msprop:Generator_ColumnPropNameInRow="Зарплата" msprop:Generator_ColumnPropNameInTable="ЗарплатаColumn" msprop:Generator_UserColumnName="Зарплата" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
