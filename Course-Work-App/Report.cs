@@ -87,7 +87,7 @@ namespace Course_Work_App
             {
                 for (int j = 1; j < dgw2.ColumnCount + 1; j++)
                 {
-                    worksheet.Rows[i].Columns[j] = dgw2.Rows[i - 1].Cells[j - 1].Value;
+                    worksheet.Rows[i + dgw1.RowCount].Columns[j] = dgw2.Rows[i - 1].Cells[j - 1].Value;
                 }
             }
             excelapp.AlertBeforeOverwriting = false;
