@@ -228,5 +228,8 @@
   <ItemGroup>
     <None Include="Resources\Captura-de-pantalla-2013-08-12-a-las-00.59.01.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

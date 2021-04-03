@@ -58,16 +58,18 @@ namespace Course_Work_App
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.FullyRooms". При необходимости она может быть перемещена или удалена.
+            this.fullyRoomsTableAdapter.Fill(this.hotelDataSet.FullyRooms);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.УчетРаботы". При необходимости она может быть перемещена или удалена.
             this.учетРаботыTableAdapter.Fill(this.hotelDataSet.УчетРаботы);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.Номера". При необходимости она может быть перемещена или удалена.
             this.номераTableAdapter.Fill(this.hotelDataSet.Номера);
 
-            for(int i = 0; i < hotelDataSet.УчетРаботы.Rows.Count; i++)
+            for(int i = 0; i < hotelDataSet.FullyRooms.Rows.Count; i++)
             {
-                if(Convert.ToDateTime(hotelDataSet.УчетРаботы.Rows[i][4]).DayOfYear  == DateTime.Now.DayOfYear)
+                if(Convert.ToDateTime(hotelDataSet.FullyRooms.Rows[i][4]).DayOfYear  == DateTime.Now.DayOfYear)
                 {
-                    номераTableAdapter.UpdateStatusRoom("Свободен", Convert.ToInt32(hotelDataSet.УчетРаботы.Rows[i][1]));
+                    номераTableAdapter.UpdateStatusRoom("Свободен", Convert.ToInt32(hotelDataSet.FullyRooms.Rows[i][0]));
                 }
             }
         }

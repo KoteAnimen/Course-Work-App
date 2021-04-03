@@ -59,7 +59,7 @@ namespace Course_Work_App
             }
             try
             {
-                номераTableAdapter.UpdateRoom("Свободно", Convert.ToDecimal(суточнаяСтоимостьTextBox.Text), (short)количествоМестNumericUpDown.Value, false, Convert.ToInt32(кодСотрудникаComboBox.Text), Convert.ToInt32(Room.id));
+                номераTableAdapter.UpdateRoom("Свободен", Convert.ToDecimal(суточнаяСтоимостьTextBox.Text), (short)количествоМестNumericUpDown.Value, false, Convert.ToInt32(кодСотрудникаComboBox.Text), Convert.ToInt32(Room.id));
                 Close();
             }
             catch

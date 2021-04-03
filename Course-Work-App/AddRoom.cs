@@ -62,7 +62,7 @@ namespace Course_Work_App
             }
             try
             {
-                номераTableAdapter.Insert(Convert.ToInt32(кодНомераTextBox.Text), "Свободно", Convert.ToDecimal(суточнаяСтоимостьTextBox.Text), (short)количествоМестNumericUpDown.Value, false, Convert.ToInt32(кодСотрудникаComboBox.Text));
+                номераTableAdapter.Insert(Convert.ToInt32(кодНомераTextBox.Text), "Свободен", Convert.ToDecimal(суточнаяСтоимостьTextBox.Text), (short)количествоМестNumericUpDown.Value, false, Convert.ToInt32(кодСотрудникаComboBox.Text));
                 Close();
             }
             catch
