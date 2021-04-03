@@ -35,6 +35,8 @@ namespace Course_Work_App
             this.учетРаботыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.учетРаботыTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.УчетРаботыTableAdapter();
             this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
+            this.listSalaryWorkersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listSalaryWorkersTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ListSalaryWorkersTableAdapter();
             this.учетРаботыDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +44,12 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableCount = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listSalaryWorkersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableCount)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -81,6 +86,15 @@ namespace Course_Work_App
             this.tableAdapterManager.СвободныеНомераTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = this.учетРаботыTableAdapter;
             // 
+            // listSalaryWorkersBindingSource
+            // 
+            this.listSalaryWorkersBindingSource.DataMember = "ListSalaryWorkers";
+            this.listSalaryWorkersBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // listSalaryWorkersTableAdapter
+            // 
+            this.listSalaryWorkersTableAdapter.ClearBeforeFill = true;
+            // 
             // учетРаботыDataGridView
             // 
             this.учетРаботыDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -97,11 +111,10 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.учетРаботыDataGridView.DataSource = this.учетРаботыBindingSource;
-            this.учетРаботыDataGridView.Location = new System.Drawing.Point(16, 34);
-            this.учетРаботыDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.учетРаботыDataGridView.Location = new System.Drawing.Point(12, 28);
             this.учетРаботыDataGridView.Name = "учетРаботыDataGridView";
-            this.учетРаботыDataGridView.Size = new System.Drawing.Size(1035, 505);
-            this.учетРаботыDataGridView.TabIndex = 2;
+            this.учетРаботыDataGridView.Size = new System.Drawing.Size(1043, 393);
+            this.учетРаботыDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -139,15 +152,27 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn6.HeaderText = "ОбщСтоимостьПроживания";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
+            // tableCount
+            // 
+            this.tableCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableCount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tableCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableCount.Location = new System.Drawing.Point(13, 427);
+            this.tableCount.Name = "tableCount";
+            this.tableCount.Size = new System.Drawing.Size(1042, 115);
+            this.tableCount.TabIndex = 2;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.tableCount);
             this.Controls.Add(this.учетРаботыDataGridView);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отчет за текущий месяц";
@@ -155,7 +180,9 @@ namespace Course_Work_App
             this.Load += new System.EventHandler(this.Report_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listSalaryWorkersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,6 +195,8 @@ namespace Course_Work_App
         private System.Windows.Forms.BindingSource учетРаботыBindingSource;
         private HotelDataSetTableAdapters.УчетРаботыTableAdapter учетРаботыTableAdapter;
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource listSalaryWorkersBindingSource;
+        private HotelDataSetTableAdapters.ListSalaryWorkersTableAdapter listSalaryWorkersTableAdapter;
         private System.Windows.Forms.DataGridView учетРаботыDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -175,5 +204,6 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridView tableCount;
     }
 }
