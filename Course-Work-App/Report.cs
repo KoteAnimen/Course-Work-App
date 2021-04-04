@@ -7,7 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
+
+// Следующее к двум пространствам имен содержит
+// функции для манипулирования
+// файл Excel
+
+using OfficeOpenXml;
+
+using OfficeOpenXml.Style;
 
 namespace Course_Work_App
 {
@@ -21,6 +29,7 @@ namespace Course_Work_App
         public Report()
         {
             InitializeComponent();
+            
         }
 
         private void учетРаботыBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -58,6 +67,7 @@ namespace Course_Work_App
         private void SaveReport_Click(object sender, EventArgs e)
         {
             string path = string.Empty;
+            saveFileDialog1.DefaultExt = "xlsx";
             using (SaveFileDialog saveDialog = new SaveFileDialog())
             {
                 if (saveDialog.ShowDialog() == DialogResult.OK)
@@ -70,29 +80,32 @@ namespace Course_Work_App
         }
 
         void SaveTable(DataGridView dgw1, DataGridView dgw2, string path)        {
-            
 
-            Excel.Application excelapp = new Excel.Application();
-            Excel.Workbook workbook = excelapp.Workbooks.Add();
-            Excel.Worksheet worksheet = workbook.ActiveSheet;
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            ExcelPackage excelapp = new ExcelPackage();
+            
+            var worksheet = excelapp.Workbook.Worksheets.Add("Отчет");
+            
 
             for (int i = 1; i < dgw1.RowCount + 1; i++)
             {
                 for (int j = 1; j < dgw1.ColumnCount + 1; j++)
                 {
-                    worksheet.Rows[i].Columns[j] = dgw1.Rows[i - 1].Cells[j - 1].Value;
+                    worksheet.Cells[i, j].Value = Convert.ToString(dgw1.Rows[i - 1].Cells[j - 1].Value);
                 }
             }
             for (int i = 1; i < dgw2.RowCount + 1; i++)
             {
                 for (int j = 1; j < dgw2.ColumnCount + 1; j++)
                 {
-                    worksheet.Rows[i + dgw1.RowCount].Columns[j] = dgw2.Rows[i - 1].Cells[j - 1].Value;
+                    worksheet.Cells[i + dgw1.RowCount, j].Value = dgw2.Rows[i - 1].Cells[j - 1].Value;
                 }
             }
-            excelapp.AlertBeforeOverwriting = false;
-            workbook.SaveAs(path);
-            excelapp.Quit();
+
+            FileStream objFileStrm = File.Create(path);
+            objFileStrm.Close();
+            File.WriteAllBytes(path, excelapp.GetAsByteArray());
+
 
         }
     }
