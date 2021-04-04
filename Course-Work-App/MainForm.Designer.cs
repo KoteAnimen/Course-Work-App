@@ -45,19 +45,23 @@ namespace Course_Work_App
             this.учетРаботыTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.УчетРаботыTableAdapter();
             this.учетРаботыBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fullyRoomsTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.FullyRoomsTableAdapter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.JobPositions = new System.Windows.Forms.Button();
             this.Workers = new System.Windows.Forms.Button();
             this.Accounting = new System.Windows.Forms.Button();
             this.Clients = new System.Windows.Forms.Button();
             this.Rooms = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fullyRoomsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullyRoomsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,7 +70,7 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(722, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(662, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -86,9 +90,6 @@ namespace Course_Work_App
             // 
             // fullyRoomsDataGridView
             // 
-            this.fullyRoomsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fullyRoomsDataGridView.AutoGenerateColumns = false;
             this.fullyRoomsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.fullyRoomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -97,9 +98,9 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.fullyRoomsDataGridView.DataSource = this.fullyRoomsBindingSource;
-            this.fullyRoomsDataGridView.Location = new System.Drawing.Point(13, 551);
+            this.fullyRoomsDataGridView.Location = new System.Drawing.Point(6, 6);
             this.fullyRoomsDataGridView.Name = "fullyRoomsDataGridView";
-            this.fullyRoomsDataGridView.Size = new System.Drawing.Size(693, 279);
+            this.fullyRoomsDataGridView.Size = new System.Drawing.Size(621, 559);
             this.fullyRoomsDataGridView.TabIndex = 3;
             // 
             // dataGridViewTextBoxColumn1
@@ -164,35 +165,14 @@ namespace Course_Work_App
             // 
             this.fullyRoomsTableAdapter.ClearBeforeFill = true;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.BackgroundImage = global::Course_Work_App.Properties.Resources.hotel;
-            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.groupBox1.Controls.Add(this.JobPositions);
-            this.groupBox1.Controls.Add(this.Workers);
-            this.groupBox1.Controls.Add(this.Accounting);
-            this.groupBox1.Controls.Add(this.Clients);
-            this.groupBox1.Controls.Add(this.Rooms);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 29);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(693, 515);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Главное меню";
-            // 
             // JobPositions
             // 
             this.JobPositions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.JobPositions.Location = new System.Drawing.Point(8, 460);
+            this.JobPositions.Location = new System.Drawing.Point(7, 516);
             this.JobPositions.Margin = new System.Windows.Forms.Padding(4);
             this.JobPositions.Name = "JobPositions";
-            this.JobPositions.Size = new System.Drawing.Size(676, 47);
+            this.JobPositions.Size = new System.Drawing.Size(619, 47);
             this.JobPositions.TabIndex = 4;
             this.JobPositions.Text = "Должности";
             this.JobPositions.UseVisualStyleBackColor = true;
@@ -202,10 +182,10 @@ namespace Course_Work_App
             // 
             this.Workers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Workers.Location = new System.Drawing.Point(8, 240);
+            this.Workers.Location = new System.Drawing.Point(7, 296);
             this.Workers.Margin = new System.Windows.Forms.Padding(4);
             this.Workers.Name = "Workers";
-            this.Workers.Size = new System.Drawing.Size(676, 47);
+            this.Workers.Size = new System.Drawing.Size(619, 47);
             this.Workers.TabIndex = 3;
             this.Workers.Text = "Персонал";
             this.Workers.UseVisualStyleBackColor = true;
@@ -215,10 +195,10 @@ namespace Course_Work_App
             // 
             this.Accounting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Accounting.Location = new System.Drawing.Point(9, 405);
+            this.Accounting.Location = new System.Drawing.Point(7, 461);
             this.Accounting.Margin = new System.Windows.Forms.Padding(4);
             this.Accounting.Name = "Accounting";
-            this.Accounting.Size = new System.Drawing.Size(676, 47);
+            this.Accounting.Size = new System.Drawing.Size(619, 47);
             this.Accounting.TabIndex = 2;
             this.Accounting.Text = "Список операций";
             this.Accounting.UseVisualStyleBackColor = true;
@@ -228,10 +208,10 @@ namespace Course_Work_App
             // 
             this.Clients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Clients.Location = new System.Drawing.Point(9, 350);
+            this.Clients.Location = new System.Drawing.Point(7, 406);
             this.Clients.Margin = new System.Windows.Forms.Padding(4);
             this.Clients.Name = "Clients";
-            this.Clients.Size = new System.Drawing.Size(676, 47);
+            this.Clients.Size = new System.Drawing.Size(619, 47);
             this.Clients.TabIndex = 1;
             this.Clients.Text = "Клиенты";
             this.Clients.UseVisualStyleBackColor = true;
@@ -241,22 +221,60 @@ namespace Course_Work_App
             // 
             this.Rooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Rooms.Location = new System.Drawing.Point(9, 295);
+            this.Rooms.Location = new System.Drawing.Point(7, 351);
             this.Rooms.Margin = new System.Windows.Forms.Padding(4);
             this.Rooms.Name = "Rooms";
-            this.Rooms.Size = new System.Drawing.Size(676, 47);
+            this.Rooms.Size = new System.Drawing.Size(619, 47);
             this.Rooms.TabIndex = 0;
             this.Rooms.Text = "Номера";
             this.Rooms.UseVisualStyleBackColor = true;
             this.Rooms.Click += new System.EventHandler(this.Rooms_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tabControl1.Location = new System.Drawing.Point(12, 28);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(641, 608);
+            this.tabControl1.TabIndex = 4;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackgroundImage = global::Course_Work_App.Properties.Resources.hotel;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.JobPositions);
+            this.tabPage1.Controls.Add(this.Workers);
+            this.tabPage1.Controls.Add(this.Accounting);
+            this.tabPage1.Controls.Add(this.Rooms);
+            this.tabPage1.Controls.Add(this.Clients);
+            this.tabPage1.Location = new System.Drawing.Point(4, 33);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(633, 571);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Главное меню";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.fullyRoomsDataGridView);
+            this.tabPage2.Location = new System.Drawing.Point(4, 33);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(633, 571);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Заселенные номера";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(722, 842);
-            this.Controls.Add(this.fullyRoomsDataGridView);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(662, 644);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -275,14 +293,15 @@ namespace Course_Work_App
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button JobPositions;
         private System.Windows.Forms.Button Workers;
         private System.Windows.Forms.Button Accounting;
@@ -303,6 +322,9 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 
