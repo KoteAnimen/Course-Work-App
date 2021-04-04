@@ -73,5 +73,10 @@ namespace Course_Work_App
                 }
             }
         }
+
+        private void AboutProgram_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Эта программа разработана студентом группы ИСП-31 Филяком Ильёй. Данная программа является курсовым проектом на тему - база данных гостиница ", "О программе");
+        }
     }
 }
