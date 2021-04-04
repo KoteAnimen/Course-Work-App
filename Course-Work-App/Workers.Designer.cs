@@ -39,6 +39,10 @@ namespace Course_Work_App
             this.ShowDismissWorkers = new System.Windows.Forms.ToolStripMenuItem();
             this.ShowAllWorkers = new System.Windows.Forms.ToolStripMenuItem();
             this.персоналDataGridView = new System.Windows.Forms.DataGridView();
+            this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.персоналTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ПерсоналTableAdapter();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +55,6 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.персоналBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelDataSet = new Course_Work_App.HotelDataSet();
-            this.персоналTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ПерсоналTableAdapter();
-            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.персоналDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.персоналBindingSource)).BeginInit();
@@ -87,42 +87,42 @@ namespace Course_Work_App
             // AddNewWorker
             // 
             this.AddNewWorker.Name = "AddNewWorker";
-            this.AddNewWorker.Size = new System.Drawing.Size(286, 22);
+            this.AddNewWorker.Size = new System.Drawing.Size(285, 22);
             this.AddNewWorker.Text = "Добавить нового сотрудника";
             this.AddNewWorker.Click += new System.EventHandler(this.AddNewWorker_Click);
             // 
             // ChangeInfWorker
             // 
             this.ChangeInfWorker.Name = "ChangeInfWorker";
-            this.ChangeInfWorker.Size = new System.Drawing.Size(286, 22);
+            this.ChangeInfWorker.Size = new System.Drawing.Size(285, 22);
             this.ChangeInfWorker.Text = "Изменить информацию о сотруднике";
             this.ChangeInfWorker.Click += new System.EventHandler(this.ChangeInfWorker_Click);
             // 
             // DismissWorker
             // 
             this.DismissWorker.Name = "DismissWorker";
-            this.DismissWorker.Size = new System.Drawing.Size(286, 22);
+            this.DismissWorker.Size = new System.Drawing.Size(285, 22);
             this.DismissWorker.Text = "Уволить сотрудника";
             this.DismissWorker.Click += new System.EventHandler(this.DismissWorker_Click);
             // 
             // ShowWorkWorkers
             // 
             this.ShowWorkWorkers.Name = "ShowWorkWorkers";
-            this.ShowWorkWorkers.Size = new System.Drawing.Size(286, 22);
+            this.ShowWorkWorkers.Size = new System.Drawing.Size(285, 22);
             this.ShowWorkWorkers.Text = "Отобразить работающих сотрудников";
             this.ShowWorkWorkers.Click += new System.EventHandler(this.ShowWorkWorkers_Click);
             // 
             // ShowDismissWorkers
             // 
             this.ShowDismissWorkers.Name = "ShowDismissWorkers";
-            this.ShowDismissWorkers.Size = new System.Drawing.Size(286, 22);
+            this.ShowDismissWorkers.Size = new System.Drawing.Size(285, 22);
             this.ShowDismissWorkers.Text = "Отобразить уволенных сотрудников";
             this.ShowDismissWorkers.Click += new System.EventHandler(this.ShowDismissWorkers_Click);
             // 
             // ShowAllWorkers
             // 
             this.ShowAllWorkers.Name = "ShowAllWorkers";
-            this.ShowAllWorkers.Size = new System.Drawing.Size(286, 22);
+            this.ShowAllWorkers.Size = new System.Drawing.Size(285, 22);
             this.ShowAllWorkers.Text = "Отобразить всех";
             this.ShowAllWorkers.Click += new System.EventHandler(this.ShowAllWorkers_Click);
             // 
@@ -154,10 +154,36 @@ namespace Course_Work_App
             this.персоналDataGridView.Size = new System.Drawing.Size(947, 475);
             this.персоналDataGridView.TabIndex = 2;
             // 
+            // персоналBindingSource
+            // 
+            this.персоналBindingSource.DataMember = "Персонал";
+            this.персоналBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "HotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // персоналTableAdapter
+            // 
+            this.персоналTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
+            this.tableAdapterManager.ДолжностиTableAdapter = null;
+            this.tableAdapterManager.КлиентыTableAdapter = null;
+            this.tableAdapterManager.НомераTableAdapter = null;
+            this.tableAdapterManager.ПерсоналTableAdapter = this.персоналTableAdapter;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
+            this.tableAdapterManager.УчетРаботыTableAdapter = null;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодСотрудника";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодСотрудника";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код сотрудника";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -185,7 +211,7 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "СерияНомерПаспорта";
-            this.dataGridViewTextBoxColumn5.HeaderText = "СерияНомерПаспорта";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Серия и номер паспорта";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
@@ -199,21 +225,21 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ДатаРождения";
-            this.dataGridViewTextBoxColumn7.HeaderText = "ДатаРождения";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Дата рождения";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "НачалоРабДня";
-            this.dataGridViewTextBoxColumn8.HeaderText = "НачалоРабДня";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Начало рабочего дня";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "КонецРабДня";
-            this.dataGridViewTextBoxColumn9.HeaderText = "КонецРабДня";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Конец рабочего дня";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
@@ -237,30 +263,6 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn12.HeaderText = "Статус";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // персоналBindingSource
-            // 
-            this.персоналBindingSource.DataMember = "Персонал";
-            this.персоналBindingSource.DataSource = this.hotelDataSet;
-            // 
-            // hotelDataSet
-            // 
-            this.hotelDataSet.DataSetName = "HotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // персоналTableAdapter
-            // 
-            this.персоналTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.ДолжностиTableAdapter = null;
-            this.tableAdapterManager.КлиентыTableAdapter = null;
-            this.tableAdapterManager.НомераTableAdapter = null;
-            this.tableAdapterManager.ПерсоналTableAdapter = this.персоналTableAdapter;
-            this.tableAdapterManager.УчетРаботыTableAdapter = null;
             // 
             // Workers
             // 
@@ -301,6 +303,8 @@ namespace Course_Work_App
         private HotelDataSetTableAdapters.ПерсоналTableAdapter персоналTableAdapter;
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView персоналDataGridView;
+        private System.Windows.Forms.ToolStripMenuItem ShowDismissWorkers;
+        private System.Windows.Forms.ToolStripMenuItem ShowAllWorkers;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -313,7 +317,5 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.ToolStripMenuItem ShowDismissWorkers;
-        private System.Windows.Forms.ToolStripMenuItem ShowAllWorkers;
     }
 }

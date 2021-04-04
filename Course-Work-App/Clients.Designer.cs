@@ -36,7 +36,14 @@ namespace Course_Work_App
             this.ChangeInfClient = new System.Windows.Forms.ToolStripMenuItem();
             this.ShowClient = new System.Windows.Forms.ToolStripMenuItem();
             this.Search = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowAll = new System.Windows.Forms.ToolStripMenuItem();
             this.accountingDataGridView = new System.Windows.Forms.DataGridView();
+            this.accountingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
+            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
+            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,13 +59,6 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountingBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelDataSet = new Course_Work_App.HotelDataSet();
-            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
-            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
-            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
-            this.ShowAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accountingDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountingBindingSource)).BeginInit();
@@ -72,7 +72,7 @@ namespace Course_Work_App
             this.операцииToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1286, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1286, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,36 +85,43 @@ namespace Course_Work_App
             this.Search,
             this.ShowAll});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
-            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
             // AddNewClient
             // 
             this.AddNewClient.Name = "AddNewClient";
-            this.AddNewClient.Size = new System.Drawing.Size(280, 22);
+            this.AddNewClient.Size = new System.Drawing.Size(264, 22);
             this.AddNewClient.Text = "Новый клиент";
             this.AddNewClient.Click += new System.EventHandler(this.AddNewClient_Click);
             // 
             // ChangeInfClient
             // 
             this.ChangeInfClient.Name = "ChangeInfClient";
-            this.ChangeInfClient.Size = new System.Drawing.Size(280, 22);
+            this.ChangeInfClient.Size = new System.Drawing.Size(264, 22);
             this.ChangeInfClient.Text = "Изменить информацию о клиенте";
             this.ChangeInfClient.Click += new System.EventHandler(this.ChangeInfClient_Click);
             // 
             // ShowClient
             // 
             this.ShowClient.Name = "ShowClient";
-            this.ShowClient.Size = new System.Drawing.Size(280, 22);
+            this.ShowClient.Size = new System.Drawing.Size(264, 22);
             this.ShowClient.Text = "Просмотр анкеты клиента";
             this.ShowClient.Click += new System.EventHandler(this.ShowClient_Click);
             // 
             // Search
             // 
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(280, 22);
+            this.Search.Size = new System.Drawing.Size(264, 22);
             this.Search.Text = "Поиск ";
             this.Search.Click += new System.EventHandler(this.Search_Click);
+            // 
+            // ShowAll
+            // 
+            this.ShowAll.Name = "ShowAll";
+            this.ShowAll.Size = new System.Drawing.Size(264, 22);
+            this.ShowAll.Text = "Показать всех";
+            this.ShowAll.Click += new System.EventHandler(this.ShowAll_Click);
             // 
             // accountingDataGridView
             // 
@@ -145,96 +152,6 @@ namespace Course_Work_App
             this.accountingDataGridView.Name = "accountingDataGridView";
             this.accountingDataGridView.Size = new System.Drawing.Size(1262, 733);
             this.accountingDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодОперации";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn2.HeaderText = "КодНомера";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "КодКлиента";
-            this.dataGridViewTextBoxColumn3.HeaderText = "КодКлиента";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Фамилия";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Имя";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Отчество";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Отчество";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Страна";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Страна";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "СерияНомерПаспорта";
-            this.dataGridViewTextBoxColumn8.HeaderText = "СерияНомерПаспорта";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Адрес";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Адрес";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "ДатаРождения";
-            this.dataGridViewTextBoxColumn10.HeaderText = "ДатаРождения";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ЦельПриезда";
-            this.dataGridViewTextBoxColumn11.HeaderText = "ЦельПриезда";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Телефон";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Телефон";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "ДатаЗаселения";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ДатаЗаселения";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn14.HeaderText = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "ОбщСтоимостьПроживания";
-            this.dataGridViewTextBoxColumn15.HeaderText = "ОбщСтоимостьПроживания";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
             // accountingBindingSource
             // 
@@ -272,18 +189,101 @@ namespace Course_Work_App
             // 
             this.номераTableAdapter.ClearBeforeFill = true;
             // 
-            // ShowAll
+            // dataGridViewTextBoxColumn1
             // 
-            this.ShowAll.Name = "ShowAll";
-            this.ShowAll.Size = new System.Drawing.Size(280, 22);
-            this.ShowAll.Text = "Показать всех";
-            this.ShowAll.Click += new System.EventHandler(this.ShowAll_Click);
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код операции";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Код номера";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "КодКлиента";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Код клиента";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Фамилия";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Имя";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Отчество";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Страна";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Страна";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "СерияНомерПаспорта";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Серия и номер паспорта";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Адрес";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Адрес";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "ДатаРождения";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Дата рождения";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ЦельПриезда";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Цель приезда";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Телефон";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "ДатаЗаселения";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Дата заселения";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "ДатаВыселения";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Дата выселения";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "ОбщСтоимостьПроживания";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Стоимость проживания";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 772);
+            this.ClientSize = new System.Drawing.Size(1286, 741);
             this.Controls.Add(this.accountingDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -319,6 +319,9 @@ namespace Course_Work_App
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private HotelDataSetTableAdapters.AccountingTableAdapter accountingTableAdapter;
         private System.Windows.Forms.DataGridView accountingDataGridView;
+        private System.Windows.Forms.BindingSource номераBindingSource;
+        private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem ShowAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -334,8 +337,5 @@ namespace Course_Work_App
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.BindingSource номераBindingSource;
-        private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
-        private System.Windows.Forms.ToolStripMenuItem ShowAll;
     }
 }

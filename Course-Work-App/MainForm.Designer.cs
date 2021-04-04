@@ -30,13 +30,11 @@ namespace Course_Work_App
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.fullyRoomsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullyRoomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new Course_Work_App.HotelDataSet();
             this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,6 +51,9 @@ namespace Course_Work_App
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fullyRoomsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fullyRoomsBindingSource)).BeginInit();
@@ -70,7 +71,7 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(662, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(662, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,13 +80,13 @@ namespace Course_Work_App
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.AboutProgram});
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // AboutProgram
             // 
             this.AboutProgram.Name = "AboutProgram";
-            this.AboutProgram.Size = new System.Drawing.Size(158, 22);
+            this.AboutProgram.Size = new System.Drawing.Size(149, 22);
             this.AboutProgram.Text = "О программе";
             // 
             // fullyRoomsDataGridView
@@ -102,24 +103,6 @@ namespace Course_Work_App
             this.fullyRoomsDataGridView.Name = "fullyRoomsDataGridView";
             this.fullyRoomsDataGridView.Size = new System.Drawing.Size(621, 559);
             this.fullyRoomsDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодНомера";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // fullyRoomsBindingSource
             // 
@@ -269,6 +252,24 @@ namespace Course_Work_App
             this.tabPage2.Text = "Заселенные номера";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код номера";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ДатаВыселения";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Дата выселения";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -278,6 +279,7 @@ namespace Course_Work_App
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -319,12 +321,12 @@ namespace Course_Work_App
         private System.Windows.Forms.BindingSource fullyRoomsBindingSource;
         private HotelDataSetTableAdapters.FullyRoomsTableAdapter fullyRoomsTableAdapter;
         private System.Windows.Forms.DataGridView fullyRoomsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }
 

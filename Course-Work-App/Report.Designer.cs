@@ -39,14 +39,14 @@ namespace Course_Work_App
             this.listSalaryWorkersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listSalaryWorkersTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ListSalaryWorkersTableAdapter();
             this.учетРаботыDataGridView = new System.Windows.Forms.DataGridView();
+            this.tableCount = new System.Windows.Forms.DataGridView();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tableCount = new System.Windows.Forms.DataGridView();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.Save.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).BeginInit();
@@ -130,42 +130,6 @@ namespace Course_Work_App
             this.учетРаботыDataGridView.Size = new System.Drawing.Size(1043, 393);
             this.учетРаботыDataGridView.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодОперации";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn2.HeaderText = "КодНомера";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "КодКлиента";
-            this.dataGridViewTextBoxColumn3.HeaderText = "КодКлиента";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ДатаЗаселения";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ДатаЗаселения";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ОбщСтоимостьПроживания";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ОбщСтоимостьПроживания";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
             // tableCount
             // 
             this.tableCount.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -176,6 +140,42 @@ namespace Course_Work_App
             this.tableCount.Name = "tableCount";
             this.tableCount.Size = new System.Drawing.Size(1042, 115);
             this.tableCount.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код операции";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Код номера";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "КодКлиента";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Код клиента";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ДатаЗаселения";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата заселения";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ДатаВыселения";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Дата выселения";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ОбщСтоимостьПроживания";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Стоимость проживания";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // Report
             // 
@@ -214,14 +214,14 @@ namespace Course_Work_App
         private System.Windows.Forms.BindingSource listSalaryWorkersBindingSource;
         private HotelDataSetTableAdapters.ListSalaryWorkersTableAdapter listSalaryWorkersTableAdapter;
         private System.Windows.Forms.DataGridView учетРаботыDataGridView;
+        private System.Windows.Forms.DataGridView tableCount;
+        private System.Windows.Forms.ToolStripButton SaveReport;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridView tableCount;
-        private System.Windows.Forms.ToolStripButton SaveReport;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

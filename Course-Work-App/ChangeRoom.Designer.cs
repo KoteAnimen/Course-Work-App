@@ -187,6 +187,7 @@ namespace Course_Work_App
             this.tableAdapterManager.КлиентыTableAdapter = null;
             this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
             this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = null;
             // 
             // Change
@@ -245,7 +246,7 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодСотрудника";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодСотрудника";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код сотрудника";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
