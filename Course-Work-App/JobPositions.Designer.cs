@@ -53,7 +53,7 @@ namespace Course_Work_App
             this.операцииToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(971, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(971, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -62,13 +62,13 @@ namespace Course_Work_App
             this.операцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ChangeInfJobPosition});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
-            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
+            this.операцииToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
             // ChangeInfJobPosition
             // 
             this.ChangeInfJobPosition.Name = "ChangeInfJobPosition";
-            this.ChangeInfJobPosition.Size = new System.Drawing.Size(298, 22);
+            this.ChangeInfJobPosition.Size = new System.Drawing.Size(281, 22);
             this.ChangeInfJobPosition.Text = "Изменить информацию о должности";
             this.ChangeInfJobPosition.Click += new System.EventHandler(this.ChangeInfJobPosition_Click);
             // 
@@ -90,10 +90,12 @@ namespace Course_Work_App
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
             this.tableAdapterManager.ДолжностиTableAdapter = this.должностиTableAdapter;
             this.tableAdapterManager.КлиентыTableAdapter = null;
             this.tableAdapterManager.НомераTableAdapter = null;
             this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = null;
             // 
             // должностиDataGridView
@@ -119,7 +121,7 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодДолжности";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодДолжности";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код должности";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 

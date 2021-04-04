@@ -289,10 +289,12 @@ namespace Course_Work_App
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WorkersTableAdapter = null;
             this.tableAdapterManager.ДолжностиTableAdapter = null;
             this.tableAdapterManager.КлиентыTableAdapter = null;
             this.tableAdapterManager.НомераTableAdapter = null;
             this.tableAdapterManager.ПерсоналTableAdapter = this.персоналTableAdapter;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = null;
             // 
             // кодСотрудникаTextBox
@@ -421,7 +423,7 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "КодДолжности";
-            this.dataGridViewTextBoxColumn3.HeaderText = "КодДолжности";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Код должности";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // ChangeWorkerProfile

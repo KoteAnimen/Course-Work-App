@@ -536,7 +536,7 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодНомера";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код номера";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
@@ -548,25 +548,25 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
-            this.dataGridViewTextBoxColumn3.HeaderText = "СуточнаяСтоимость";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Суточная стоимость";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
-            this.dataGridViewTextBoxColumn4.HeaderText = "КоличествоМест";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Количество мест";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
-            this.dataGridViewTextBoxColumn5.HeaderText = "КодСотрудника";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Код сотрудника";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "СостояниеОплаты";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Состояние оплаты";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // ClientProfile

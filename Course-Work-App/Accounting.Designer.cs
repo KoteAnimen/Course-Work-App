@@ -55,14 +55,14 @@ namespace Course_Work_App
             this.MakeReport});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(925, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(925, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // MakeReport
             // 
             this.MakeReport.Name = "MakeReport";
-            this.MakeReport.Size = new System.Drawing.Size(147, 21);
+            this.MakeReport.Size = new System.Drawing.Size(136, 20);
             this.MakeReport.Text = "Сформировать отчет";
             this.MakeReport.Click += new System.EventHandler(this.MakeReport_Click);
             // 
@@ -117,42 +117,42 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодОперации";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код операции";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn2.HeaderText = "КодНомера";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Код номера";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "КодКлиента";
-            this.dataGridViewTextBoxColumn3.HeaderText = "КодКлиента";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Код клиента";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ДатаЗаселения";
-            this.dataGridViewTextBoxColumn4.HeaderText = "ДатаЗаселения";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата заселения";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ДатаВыселения";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Дата выселения";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "ОбщСтоимостьПроживания";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ОбщСтоимостьПроживания";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Стоимость проживания";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 

@@ -36,16 +36,16 @@ namespace Course_Work_App
             this.ChangeInfRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteRoom = new System.Windows.Forms.ToolStripMenuItem();
             this.номераDataGridView = new System.Windows.Forms.DataGridView();
+            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new Course_Work_App.HotelDataSet();
+            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
+            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.номераBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hotelDataSet = new Course_Work_App.HotelDataSet();
-            this.номераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.НомераTableAdapter();
-            this.tableAdapterManager = new Course_Work_App.HotelDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.номераDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.номераBindingSource)).BeginInit();
@@ -116,48 +116,6 @@ namespace Course_Work_App
             this.номераDataGridView.Size = new System.Drawing.Size(915, 481);
             this.номераDataGridView.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодНомера";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
-            this.dataGridViewTextBoxColumn3.HeaderText = "СуточнаяСтоимость";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
-            this.dataGridViewTextBoxColumn4.HeaderText = "КоличествоМест";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "СостояниеОплаты";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
-            this.dataGridViewTextBoxColumn5.HeaderText = "КодСотрудника";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
             // номераBindingSource
             // 
             this.номераBindingSource.DataMember = "Номера";
@@ -181,7 +139,50 @@ namespace Course_Work_App
             this.tableAdapterManager.КлиентыTableAdapter = null;
             this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
             this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = null;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код номера";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Суточная стоимость";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Количество мест";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Состояние оплаты";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Код сотрудника";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // Rooms
             // 
@@ -219,13 +220,13 @@ namespace Course_Work_App
         private HotelDataSetTableAdapters.НомераTableAdapter номераTableAdapter;
         private HotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView номераDataGridView;
+        private System.Windows.Forms.ToolStripMenuItem AddRoom;
+        private System.Windows.Forms.ToolStripMenuItem DeleteRoom;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.ToolStripMenuItem AddRoom;
-        private System.Windows.Forms.ToolStripMenuItem DeleteRoom;
     }
 }

@@ -186,6 +186,7 @@ namespace Course_Work_App
             this.tableAdapterManager.КлиентыTableAdapter = null;
             this.tableAdapterManager.НомераTableAdapter = this.номераTableAdapter;
             this.tableAdapterManager.ПерсоналTableAdapter = null;
+            this.tableAdapterManager.СвободныеНомераTableAdapter = null;
             this.tableAdapterManager.УчетРаботыTableAdapter = null;
             // 
             // Add
@@ -244,32 +245,37 @@ namespace Course_Work_App
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодСотрудника";
-            this.dataGridViewTextBoxColumn1.HeaderText = "КодСотрудника";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код сотрудника";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Фамилия";
             this.dataGridViewTextBoxColumn2.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Имя";
             this.dataGridViewTextBoxColumn3.HeaderText = "Имя";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Отчество";
             this.dataGridViewTextBoxColumn4.HeaderText = "Отчество";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Должность";
             this.dataGridViewTextBoxColumn5.HeaderText = "Должность";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // AddRoom
             // 
