@@ -67,7 +67,7 @@ namespace Course_Work_App
             if(состояниеОплатыCheckBox.Checked == true)
             {
                 countDays = датаВыселенияDateTimePicker.Value.DayOfYear - датаЗаселенияDateTimePicker.Value.DayOfYear;
-                if(кодНомераComboBox.Text != "" && датаЗаселенияDateTimePicker.Value.DayOfYear != датаВыселенияDateTimePicker.Value.DayOfYear)
+                if(кодНомераComboBox.Text != "" && датаЗаселенияDateTimePicker.Value.DayOfYear != датаВыселенияDateTimePicker.Value.DayOfYear && датаЗаселенияDateTimePicker.Value < датаВыселенияDateTimePicker.Value)
                 {                    
                     for(int i = 0; i < свободныеНомераDataGridView.RowCount; i++)
                     {
