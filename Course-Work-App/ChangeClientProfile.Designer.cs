@@ -77,13 +77,13 @@ namespace Course_Work_App
             this.свободныеНомераBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.свободныеНомераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.СвободныеНомераTableAdapter();
             this.свободныеНомераDataGridView = new System.Windows.Forms.DataGridView();
-            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
             отчествоLabel = new System.Windows.Forms.Label();
@@ -531,48 +531,55 @@ namespace Course_Work_App
             this.свободныеНомераDataGridView.DataSource = this.свободныеНомераBindingSource;
             this.свободныеНомераDataGridView.Location = new System.Drawing.Point(17, 367);
             this.свободныеНомераDataGridView.Name = "свободныеНомераDataGridView";
+            this.свободныеНомераDataGridView.ReadOnly = true;
             this.свободныеНомераDataGridView.Size = new System.Drawing.Size(876, 210);
             this.свободныеНомераDataGridView.TabIndex = 4;
-            // 
-            // accountingTableAdapter
-            // 
-            this.accountingTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
             this.dataGridViewTextBoxColumn1.HeaderText = "Код номера";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
             this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
             this.dataGridViewTextBoxColumn3.HeaderText = "Суточная стоимость";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
             this.dataGridViewTextBoxColumn4.HeaderText = "Количество мест";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
             this.dataGridViewTextBoxColumn5.HeaderText = "Код сотрудника";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Состояние оплаты";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // accountingTableAdapter
+            // 
+            this.accountingTableAdapter.ClearBeforeFill = true;
             // 
             // ChangeClientProfile
             // 

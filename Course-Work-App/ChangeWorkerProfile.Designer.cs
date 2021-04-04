@@ -405,6 +405,7 @@ namespace Course_Work_App
             this.должностиDataGridView.DataSource = this.должностиBindingSource;
             this.должностиDataGridView.Location = new System.Drawing.Point(17, 316);
             this.должностиDataGridView.Name = "должностиDataGridView";
+            this.должностиDataGridView.ReadOnly = true;
             this.должностиDataGridView.Size = new System.Drawing.Size(702, 215);
             this.должностиDataGridView.TabIndex = 4;
             // 
@@ -413,18 +414,21 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Название";
             this.dataGridViewTextBoxColumn1.HeaderText = "Название";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Зарплата";
             this.dataGridViewTextBoxColumn2.HeaderText = "Зарплата";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "КодДолжности";
             this.dataGridViewTextBoxColumn3.HeaderText = "Код должности";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // ChangeWorkerProfile
             // 

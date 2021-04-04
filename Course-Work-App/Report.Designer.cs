@@ -39,14 +39,14 @@ namespace Course_Work_App
             this.listSalaryWorkersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listSalaryWorkersTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.ListSalaryWorkersTableAdapter();
             this.учетРаботыDataGridView = new System.Windows.Forms.DataGridView();
-            this.tableCount = new System.Windows.Forms.DataGridView();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableCount = new System.Windows.Forms.DataGridView();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.Save.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.учетРаботыBindingSource)).BeginInit();
@@ -127,8 +127,51 @@ namespace Course_Work_App
             this.учетРаботыDataGridView.DataSource = this.учетРаботыBindingSource;
             this.учетРаботыDataGridView.Location = new System.Drawing.Point(12, 28);
             this.учетРаботыDataGridView.Name = "учетРаботыDataGridView";
+            this.учетРаботыDataGridView.ReadOnly = true;
             this.учетРаботыDataGridView.Size = new System.Drawing.Size(1043, 393);
             this.учетРаботыDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Код операции";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Код номера";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "КодКлиента";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Код клиента";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ДатаЗаселения";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Дата заселения";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ДатаВыселения";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Дата выселения";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ОбщСтоимостьПроживания";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Стоимость проживания";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // tableCount
             // 
@@ -138,44 +181,9 @@ namespace Course_Work_App
             this.tableCount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableCount.Location = new System.Drawing.Point(13, 427);
             this.tableCount.Name = "tableCount";
+            this.tableCount.ReadOnly = true;
             this.tableCount.Size = new System.Drawing.Size(1042, 115);
             this.tableCount.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "КодОперации";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Код операции";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "КодНомера";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Код номера";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "КодКлиента";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Код клиента";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ДатаЗаселения";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Дата заселения";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ДатаВыселения";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Дата выселения";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ОбщСтоимостьПроживания";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Стоимость проживания";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // Report
             // 
@@ -186,8 +194,12 @@ namespace Course_Work_App
             this.Controls.Add(this.учетРаботыDataGridView);
             this.Controls.Add(this.Save);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Report";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Отчет за текущий месяц";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

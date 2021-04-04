@@ -530,6 +530,7 @@ namespace Course_Work_App
             this.свободныеНомераDataGridView.DataSource = this.свободныеНомераBindingSource;
             this.свободныеНомераDataGridView.Location = new System.Drawing.Point(17, 367);
             this.свободныеНомераDataGridView.Name = "свободныеНомераDataGridView";
+            this.свободныеНомераDataGridView.ReadOnly = true;
             this.свободныеНомераDataGridView.Size = new System.Drawing.Size(876, 210);
             this.свободныеНомераDataGridView.TabIndex = 4;
             // 
@@ -538,36 +539,42 @@ namespace Course_Work_App
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
             this.dataGridViewTextBoxColumn1.HeaderText = "Код номера";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Состояние";
             this.dataGridViewTextBoxColumn2.HeaderText = "Состояние";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "СуточнаяСтоимость";
             this.dataGridViewTextBoxColumn3.HeaderText = "Суточная стоимость";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "КоличествоМест";
             this.dataGridViewTextBoxColumn4.HeaderText = "Количество мест";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "КодСотрудника";
             this.dataGridViewTextBoxColumn5.HeaderText = "Код сотрудника";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "СостояниеОплаты";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Состояние оплаты";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
             // ClientProfile
             // 
