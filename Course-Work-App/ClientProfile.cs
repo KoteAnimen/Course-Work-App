@@ -107,7 +107,7 @@ namespace Course_Work_App
             {
                 клиентыTableAdapter.Insert(фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, странаTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, цельПриездаTextBox.Text, телефонMaskedTextBox.Text);
                 this.клиентыTableAdapter.Fill(this.hotelDataSet.Клиенты);
-                номераTableAdapter.UpdateStatusRoom(состояниеComboBox.Text, Convert.ToInt32(кодНомераComboBox.Text));
+                номераTableAdapter.UpdateStatusRoom(состояниеComboBox.Text, состояниеОплатыCheckBox.Checked, Convert.ToInt32(кодНомераComboBox.Text));
                 учетРаботыTableAdapter.Insert(Convert.ToInt32(кодНомераComboBox.Text), Convert.ToInt32(hotelDataSet.Клиенты.Rows[hotelDataSet.Клиенты.Rows.Count - 1][0]), датаЗаселенияDateTimePicker.Value, датаВыселенияDateTimePicker.Value, countCost);
                 Close();
             }

@@ -80,7 +80,11 @@ namespace Course_Work_App
                 MessageBox.Show(ex.ToString() ,"Ошибка");
             }
         }
-        
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
 

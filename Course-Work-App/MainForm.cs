@@ -69,7 +69,7 @@ namespace Course_Work_App
             {
                 if(Convert.ToDateTime(hotelDataSet.FullyRooms.Rows[i][2]).DayOfYear  == DateTime.Now.DayOfYear)
                 {
-                    номераTableAdapter.UpdateStatusRoom("Свободен", Convert.ToInt32(hotelDataSet.FullyRooms.Rows[i][0]));
+                    номераTableAdapter.UpdateStatusRoom("Свободен", false, Convert.ToInt32(hotelDataSet.FullyRooms.Rows[i][0]));
                 }
             }
         }

@@ -26,7 +26,7 @@ namespace Course_Work_App
         private void ClientProfile_Load(object sender, EventArgs e)
         {
             
-            номераTableAdapter.UpdateStatusRoom("Свободен", Convert.ToInt32(Client.idRoom));
+            номераTableAdapter.UpdateStatusRoom("Свободен", false, Convert.ToInt32(Client.idRoom));
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.СвободныеНомера". При необходимости она может быть перемещена или удалена.
             this.свободныеНомераTableAdapter.Fill(this.hotelDataSet.СвободныеНомера);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "hotelDataSet.УчетРаботы". При необходимости она может быть перемещена или удалена.
@@ -58,7 +58,7 @@ namespace Course_Work_App
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            номераTableAdapter.UpdateStatusRoom(Client.statusRoom, Convert.ToInt32(Client.idRoom));
+            номераTableAdapter.UpdateStatusRoom(Client.statusRoom, состояниеОплатыCheckBox.Checked, Convert.ToInt32(Client.idRoom));
             Close();
         }        
 
@@ -151,7 +151,7 @@ namespace Course_Work_App
             {
                 клиентыTableAdapter.UpdateClient(фамилияTextBox.Text, имяTextBox.Text, отчествоTextBox.Text, странаTextBox.Text, серияНомерПаспортаTextBox.Text, адресTextBox.Text, датаРожденияDateTimePicker.Value, цельПриездаTextBox.Text, телефонMaskedTextBox.Text, Client.id);
                 this.клиентыTableAdapter.Fill(this.hotelDataSet.Клиенты);
-                номераTableAdapter.UpdateStatusRoom(состояниеComboBox.Text, Convert.ToInt32(кодНомераComboBox.Text));
+                номераTableAdapter.UpdateStatusRoom(состояниеComboBox.Text, состояниеОплатыCheckBox.Checked, Convert.ToInt32(кодНомераComboBox.Text));
                 учетРаботыTableAdapter.UpdateAccount(Convert.ToInt32(кодНомераComboBox.Text), датаЗаселенияDateTimePicker.Value, датаВыселенияDateTimePicker.Value, countCost, Client.id);
                 Close();
             }

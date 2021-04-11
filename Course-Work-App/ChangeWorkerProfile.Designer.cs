@@ -383,6 +383,7 @@ namespace Course_Work_App
             this.Cancel.TabIndex = 3;
             this.Cancel.Text = "Отмена";
             this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // должностиTableAdapter
             // 

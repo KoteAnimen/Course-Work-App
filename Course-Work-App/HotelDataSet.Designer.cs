@@ -7966,10 +7966,11 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
             this._commandCollection[4].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодНомера", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодНомера", global::System.Data.DataRowVersion.Original, false, null));
             this._commandCollection[5] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "UPDATE       Номера\r\nSET                Состояние = ?\r\nWHERE        (КодНомера = " +
-                "?)";
+            this._commandCollection[5].CommandText = "UPDATE       Номера\r\nSET                Состояние = ?, СостояниеОплаты = ?\r\nWHERE" +
+                "        (КодНомера = ?)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Состояние", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Состояние", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("СостояниеОплаты", global::System.Data.OleDb.OleDbType.Boolean, 2, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "СостояниеОплаты", global::System.Data.DataRowVersion.Current, false, null));
             this._commandCollection[5].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_КодНомера", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "КодНомера", global::System.Data.DataRowVersion.Original, false, null));
         }
         
@@ -8267,7 +8268,7 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateStatusRoom(string Состояние, int Original_КодНомера) {
+        public virtual int UpdateStatusRoom(string Состояние, bool СостояниеОплаты, int Original_КодНомера) {
             global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[5];
             if ((Состояние == null)) {
                 throw new global::System.ArgumentNullException("Состояние");
@@ -8275,7 +8276,8 @@ namespace Course_Work_App.HotelDataSetTableAdapters {
             else {
                 command.Parameters[0].Value = ((string)(Состояние));
             }
-            command.Parameters[1].Value = ((int)(Original_КодНомера));
+            command.Parameters[1].Value = ((bool)(СостояниеОплаты));
+            command.Parameters[2].Value = ((int)(Original_КодНомера));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

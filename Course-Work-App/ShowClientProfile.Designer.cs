@@ -74,13 +74,13 @@ namespace Course_Work_App
             this.свободныеНомераBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.свободныеНомераTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.СвободныеНомераTableAdapter();
             this.свободныеНомераDataGridView = new System.Windows.Forms.DataGridView();
-            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.accountingTableAdapter = new Course_Work_App.HotelDataSetTableAdapters.AccountingTableAdapter();
             фамилияLabel = new System.Windows.Forms.Label();
             имяLabel = new System.Windows.Forms.Label();
             отчествоLabel = new System.Windows.Forms.Label();
@@ -499,10 +499,6 @@ namespace Course_Work_App
             this.свободныеНомераDataGridView.Size = new System.Drawing.Size(876, 210);
             this.свободныеНомераDataGridView.TabIndex = 4;
             // 
-            // accountingTableAdapter
-            // 
-            this.accountingTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "КодНомера";
@@ -545,6 +541,10 @@ namespace Course_Work_App
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
+            // accountingTableAdapter
+            // 
+            this.accountingTableAdapter.ClearBeforeFill = true;
+            // 
             // ShowClientProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -561,7 +561,7 @@ namespace Course_Work_App
             this.Name = "ShowClientProfile";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Изменить анкету клиента";
+            this.Text = "Просмотр анкеты клиента";
             this.Load += new System.EventHandler(this.ClientProfile_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
